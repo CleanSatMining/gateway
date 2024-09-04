@@ -1,0 +1,7755 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "standard public schema",
+    "description": "",
+    "version": "12.2.3 (519615d)"
+  },
+  "externalDocs": {
+    "description": "PostgREST Documentation",
+    "url": "https://postgrest.org/en/v12/references/api.html"
+  },
+  "servers": [
+    {
+      "url": "https://zlczywhctfaosxqtjwee.supabase.co:443/"
+    }
+  ],
+  "paths": {
+    "/vaults": {
+      "get": {
+        "tags": ["vaults"],
+        "summary": "CSM society bitcoin vault",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "xpub",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "farmId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Ordering",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range-Unit",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string",
+              "default": "items"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["count=none"]
+            }
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "description": "where",
+            "schema": {
+              "type": "string",
+              "items": {
+                "$ref": "#/components/schemas/where"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/vaults"
+                  }
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Partial Content",
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": ["vaults"],
+        "summary": "CSM society bitcoin vault",
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "vaults",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/vaults"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-codegen-request-body-name": "vaults"
+      },
+      "delete": {
+        "tags": ["vaults"],
+        "summary": "CSM society bitcoin vault",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "xpub",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "farmId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["vaults"],
+        "summary": "CSM society bitcoin vault",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "xpub",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "farmId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "vaults",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/vaults"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-codegen-request-body-name": "vaults"
+      }
+    },
+    "/containers": {
+      "get": {
+        "tags": ["containers"],
+        "summary": "asics container",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "asicId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "units",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cost",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "siteId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Ordering",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range-Unit",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string",
+              "default": "items"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["count=none"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/containers"
+                  }
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        }
+      },
+      "post": {
+        "tags": ["containers"],
+        "summary": "asics container",
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "containers",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/containers"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-codegen-request-body-name": "containers"
+      },
+      "delete": {
+        "tags": ["containers"],
+        "summary": "asics container",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "asicId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "units",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cost",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "siteId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["containers"],
+        "summary": "asics container",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "asicId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "units",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cost",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "siteId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "containers",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/containers"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-codegen-request-body-name": "containers"
+      }
+    },
+    "/societies": {
+      "get": {
+        "tags": ["societies"],
+        "summary": "CSM mining society",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "csmSaShare",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "registrationNumber",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "shareCapital",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tokenization",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "taxRate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "provisionRate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "crowdFundingFeeRate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "updated_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Ordering",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range-Unit",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string",
+              "default": "items"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["count=none"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/societies"
+                  }
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        }
+      },
+      "post": {
+        "tags": ["societies"],
+        "summary": "CSM mining society",
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "societies",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/societies"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-codegen-request-body-name": "societies"
+      },
+      "delete": {
+        "tags": ["societies"],
+        "summary": "CSM mining society",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "csmSaShare",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "registrationNumber",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "shareCapital",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tokenization",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "taxRate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "provisionRate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "crowdFundingFeeRate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "updated_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["societies"],
+        "summary": "CSM mining society",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "csmSaShare",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "registrationNumber",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "shareCapital",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tokenization",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "taxRate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "provisionRate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "crowdFundingFeeRate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "updated_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "societies",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/societies"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-codegen-request-body-name": "societies"
+      }
+    },
+    "/asics": {
+      "get": {
+        "tags": ["asics"],
+        "summary": "mining asic",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "manufacturer",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "model",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "powerW",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "hashrateTHs",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Ordering",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range-Unit",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string",
+              "default": "items"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["count=none"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/asics"
+                  }
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        }
+      },
+      "post": {
+        "tags": ["asics"],
+        "summary": "mining asic",
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "asics",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/asics"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-codegen-request-body-name": "asics"
+      },
+      "delete": {
+        "tags": ["asics"],
+        "summary": "mining asic",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "manufacturer",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "model",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "powerW",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "hashrateTHs",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["asics"],
+        "summary": "mining asic",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "manufacturer",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "model",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "powerW",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "hashrateTHs",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "asics",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/asics"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-codegen-request-body-name": "asics"
+      }
+    },
+    "/powerPlants": {
+      "get": {
+        "tags": ["powerPlants"],
+        "summary": "power plant electricity supplier",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contractDuration",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "electricityPrice",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "powerMW",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "renewableContract",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "energies",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Ordering",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range-Unit",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string",
+              "default": "items"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["count=none"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/powerPlants"
+                  }
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        }
+      },
+      "post": {
+        "tags": ["powerPlants"],
+        "summary": "power plant electricity supplier",
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "powerPlants",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/powerPlants"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-codegen-request-body-name": "powerPlants"
+      },
+      "delete": {
+        "tags": ["powerPlants"],
+        "summary": "power plant electricity supplier",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contractDuration",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "electricityPrice",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "powerMW",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "renewableContract",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "energies",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["powerPlants"],
+        "summary": "power plant electricity supplier",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contractDuration",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "electricityPrice",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "powerMW",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "renewableContract",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "energies",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "powerPlants",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/powerPlants"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-codegen-request-body-name": "powerPlants"
+      }
+    },
+    "/contracts": {
+      "get": {
+        "tags": ["contracts"],
+        "summary": "contracts of mining services",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "siteId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "csmTaxRate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "csmPowerTax",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "csmProfitSharing",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "opTaxRate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "opPowerTax",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "opProfitSharing",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pool",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "poolTaxRate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "operator",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Ordering",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range-Unit",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string",
+              "default": "items"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["count=none"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/contracts"
+                  }
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        }
+      },
+      "post": {
+        "tags": ["contracts"],
+        "summary": "contracts of mining services",
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "contracts",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/contracts"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-codegen-request-body-name": "contracts"
+      },
+      "delete": {
+        "tags": ["contracts"],
+        "summary": "contracts of mining services",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "siteId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "csmTaxRate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "csmPowerTax",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "csmProfitSharing",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "opTaxRate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "opPowerTax",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "opProfitSharing",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pool",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "poolTaxRate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "operator",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["contracts"],
+        "summary": "contracts of mining services",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "siteId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "csmTaxRate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "csmPowerTax",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "csmProfitSharing",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "opTaxRate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "opPowerTax",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "opProfitSharing",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pool",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "poolTaxRate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "operator",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "contracts",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/contracts"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-codegen-request-body-name": "contracts"
+      }
+    },
+    "/locations": {
+      "get": {
+        "tags": ["locations"],
+        "summary": "location of csm place",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "aera",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Ordering",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range-Unit",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string",
+              "default": "items"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["count=none"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/locations"
+                  }
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        }
+      },
+      "post": {
+        "tags": ["locations"],
+        "summary": "location of csm place",
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "locations",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/locations"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-codegen-request-body-name": "locations"
+      },
+      "delete": {
+        "tags": ["locations"],
+        "summary": "location of csm place",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "aera",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["locations"],
+        "summary": "location of csm place",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "aera",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "locations",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/locations"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-codegen-request-body-name": "locations"
+      }
+    },
+    "/operators": {
+      "get": {
+        "tags": ["operators"],
+        "summary": "mining operator",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "logo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "website",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Ordering",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range-Unit",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string",
+              "default": "items"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["count=none"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/operators"
+                  }
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        }
+      },
+      "post": {
+        "tags": ["operators"],
+        "summary": "mining operator",
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "operators",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/operators"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-codegen-request-body-name": "operators"
+      },
+      "delete": {
+        "tags": ["operators"],
+        "summary": "mining operator",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "logo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "website",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["operators"],
+        "summary": "mining operator",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "logo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "website",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "operators",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/operators"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-codegen-request-body-name": "operators"
+      }
+    },
+    "/energies": {
+      "get": {
+        "tags": ["energies"],
+        "summary": "sources of energy",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Ordering",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range-Unit",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string",
+              "default": "items"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["count=none"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/energies"
+                  }
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        }
+      },
+      "post": {
+        "tags": ["energies"],
+        "summary": "sources of energy",
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "energies",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/energies"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-codegen-request-body-name": "energies"
+      },
+      "delete": {
+        "tags": ["energies"],
+        "summary": "sources of energy",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["energies"],
+        "summary": "sources of energy",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "energies",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/energies"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-codegen-request-body-name": "energies"
+      }
+    },
+    "/financialStatements": {
+      "get": {
+        "tags": ["financialStatements"],
+        "summary": "financial statement",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "farmId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "siteId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "flow",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "btc",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "usd",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "btcPrice",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Ordering",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range-Unit",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string",
+              "default": "items"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["count=none"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/financialStatements"
+                  }
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        }
+      },
+      "post": {
+        "tags": ["financialStatements"],
+        "summary": "financial statement",
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "financialStatements",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/financialStatements"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-codegen-request-body-name": "financialStatements"
+      },
+      "delete": {
+        "tags": ["financialStatements"],
+        "summary": "financial statement",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "farmId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "siteId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "flow",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "btc",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "usd",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "btcPrice",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["financialStatements"],
+        "summary": "financial statement",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "farmId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "siteId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "flow",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "btc",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "usd",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "btcPrice",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "financialStatements",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/financialStatements"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-codegen-request-body-name": "financialStatements"
+      }
+    },
+    "/mining": {
+      "get": {
+        "tags": ["mining"],
+        "summary": "mining data",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "farmId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "siteId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "day",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "hashrate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uptime",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mined",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Ordering",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range-Unit",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string",
+              "default": "items"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["count=none"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/mining"
+                  }
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        }
+      },
+      "post": {
+        "tags": ["mining"],
+        "summary": "mining data",
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "mining",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/mining"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-codegen-request-body-name": "mining"
+      },
+      "delete": {
+        "tags": ["mining"],
+        "summary": "mining data",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "farmId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "siteId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "day",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "hashrate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uptime",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mined",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["mining"],
+        "summary": "mining data",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "farmId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "siteId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "day",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "hashrate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uptime",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mined",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "mining",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/mining"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-codegen-request-body-name": "mining"
+      }
+    },
+    "/sites": {
+      "get": {
+        "tags": ["sites"],
+        "summary": "Mining site of a farm",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "farmId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "localisationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "isClosed",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "closed_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "updated_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Ordering",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range-Unit",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string",
+              "default": "items"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["count=none"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/sites"
+                  }
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        }
+      },
+      "post": {
+        "tags": ["sites"],
+        "summary": "Mining site of a farm",
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "sites",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/sites"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-codegen-request-body-name": "sites"
+      },
+      "delete": {
+        "tags": ["sites"],
+        "summary": "Mining site of a farm",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "farmId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "localisationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "isClosed",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "closed_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "updated_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["sites"],
+        "summary": "Mining site of a farm",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "farmId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "localisationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "isClosed",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "closed_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "updated_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "sites",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/sites"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-codegen-request-body-name": "sites"
+      }
+    },
+    "/flows": {
+      "get": {
+        "tags": ["flows"],
+        "summary": "cash flow oidtion",
+        "parameters": [
+          {
+            "name": "cash",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Ordering",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range-Unit",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string",
+              "default": "items"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["count=none"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/flows"
+                  }
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        }
+      },
+      "post": {
+        "tags": ["flows"],
+        "summary": "cash flow oidtion",
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "flows",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/flows"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-codegen-request-body-name": "flows"
+      },
+      "delete": {
+        "tags": ["flows"],
+        "summary": "cash flow oidtion",
+        "parameters": [
+          {
+            "name": "cash",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["flows"],
+        "summary": "cash flow oidtion",
+        "parameters": [
+          {
+            "name": "cash",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "flows",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/flows"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-codegen-request-body-name": "flows"
+      }
+    },
+    "/farms": {
+      "get": {
+        "tags": ["farms"],
+        "summary": "mining farm",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "shortName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "imageLink",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "updated_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Ordering",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range-Unit",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string",
+              "default": "items"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["count=none"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/farms"
+                  }
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        }
+      },
+      "post": {
+        "tags": ["farms"],
+        "summary": "mining farm",
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "farms",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/farms"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-codegen-request-body-name": "farms"
+      },
+      "delete": {
+        "tags": ["farms"],
+        "summary": "mining farm",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "shortName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "imageLink",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "updated_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["farms"],
+        "summary": "mining farm",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "shortName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "imageLink",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "updated_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "farms",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/farms"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-codegen-request-body-name": "farms"
+      }
+    },
+    "/tokens": {
+      "get": {
+        "tags": ["tokens"],
+        "summary": "CSM token",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "decimals",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gnosisscanUrl",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "initialPrice",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "symbol",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "supply",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "updated_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "farmId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Ordering",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range-Unit",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string",
+              "default": "items"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["count=none"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/tokens"
+                  }
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        }
+      },
+      "post": {
+        "tags": ["tokens"],
+        "summary": "CSM token",
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "tokens",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/tokens"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-codegen-request-body-name": "tokens"
+      },
+      "delete": {
+        "tags": ["tokens"],
+        "summary": "CSM token",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "decimals",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gnosisscanUrl",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "initialPrice",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "symbol",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "supply",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "updated_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "farmId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["tokens"],
+        "summary": "CSM token",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "decimals",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gnosisscanUrl",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "initialPrice",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "symbol",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "supply",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "updated_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "farmId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "tokens",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/tokens"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-codegen-request-body-name": "tokens"
+      }
+    },
+    "/pools": {
+      "get": {
+        "tags": ["pools"],
+        "summary": "mining pool",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Ordering",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range-Unit",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string",
+              "default": "items"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["count=none"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/pools"
+                  }
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        }
+      },
+      "post": {
+        "tags": ["pools"],
+        "summary": "mining pool",
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "pools",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/pools"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-codegen-request-body-name": "pools"
+      },
+      "delete": {
+        "tags": ["pools"],
+        "summary": "mining pool",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["pools"],
+        "summary": "mining pool",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "pools",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/pools"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-codegen-request-body-name": "pools"
+      }
+    },
+    "/apis": {
+      "get": {
+        "tags": ["apis"],
+        "summary": "mining pool api",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "poolId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "siteId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Ordering",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range-Unit",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string",
+              "default": "items"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["count=none"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/apis"
+                  }
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        }
+      },
+      "post": {
+        "tags": ["apis"],
+        "summary": "mining pool api",
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "apis",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/apis"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-codegen-request-body-name": "apis"
+      },
+      "delete": {
+        "tags": ["apis"],
+        "summary": "mining pool api",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "poolId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "siteId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["apis"],
+        "summary": "mining pool api",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "poolId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "siteId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "apis",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/apis"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-codegen-request-body-name": "apis"
+      }
+    },
+    "/providers": {
+      "get": {
+        "tags": ["providers"],
+        "summary": "service provider",
+        "parameters": [
+          {
+            "name": "provider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Ordering",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range-Unit",
+            "in": "header",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string",
+              "default": "items"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limiting and Pagination",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["count=none"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/providers"
+                  }
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        }
+      },
+      "post": {
+        "tags": ["providers"],
+        "summary": "service provider",
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Filtering Columns",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "providers",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/providers"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-codegen-request-body-name": "providers"
+      },
+      "delete": {
+        "tags": ["providers"],
+        "summary": "service provider",
+        "parameters": [
+          {
+            "name": "provider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["providers"],
+        "summary": "service provider",
+        "parameters": [
+          {
+            "name": "provider",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Preference",
+            "schema": {
+              "type": "string",
+              "enum": ["return=representation", "return=minimal", "return=none"]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "providers",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/providers"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-codegen-request-body-name": "providers"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "vaults": {
+        "required": ["created_at", "farmId", "id", "xpub"],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Note:\nThis is a Primary Key.<pk/>",
+            "format": "bigint"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "timestamp with time zone",
+            "default": "now()"
+          },
+          "xpub": {
+            "type": "string",
+            "format": "character varying"
+          },
+          "farmId": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `farms.id`.<fk table='farms' column='id'/>",
+            "format": "bigint"
+          }
+        },
+        "description": "CSM society bitcoin vault"
+      },
+      "containers": {
+        "required": [
+          "asicId",
+          "cost",
+          "created_at",
+          "id",
+          "locationId",
+          "siteId",
+          "slug",
+          "units"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Note:\nThis is a Primary Key.<pk/>",
+            "format": "bigint"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "timestamp with time zone",
+            "default": "now()"
+          },
+          "asicId": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `asics.id`.<fk table='asics' column='id'/>",
+            "format": "bigint"
+          },
+          "units": {
+            "type": "integer",
+            "format": "bigint"
+          },
+          "cost": {
+            "type": "number",
+            "format": "numeric"
+          },
+          "start": {
+            "type": "string",
+            "format": "timestamp with time zone"
+          },
+          "end": {
+            "type": "string",
+            "format": "timestamp with time zone"
+          },
+          "locationId": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `locations.id`.<fk table='locations' column='id'/>",
+            "format": "bigint"
+          },
+          "siteId": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `sites.id`.<fk table='sites' column='id'/>",
+            "format": "bigint"
+          },
+          "slug": {
+            "type": "string",
+            "format": "character varying"
+          }
+        },
+        "description": "asics container"
+      },
+      "societies": {
+        "required": [
+          "created_at",
+          "crowdFundingFeeRate",
+          "csmSaShare",
+          "id",
+          "locationId",
+          "name",
+          "provisionRate",
+          "registrationNumber",
+          "shareCapital",
+          "taxRate",
+          "tokenization",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Note:\nThis is a Primary Key.<pk/>",
+            "format": "bigint"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "timestamp with time zone",
+            "default": "now()"
+          },
+          "csmSaShare": {
+            "type": "number",
+            "format": "real"
+          },
+          "registrationNumber": {
+            "type": "string",
+            "format": "character varying"
+          },
+          "shareCapital": {
+            "type": "number",
+            "format": "numeric"
+          },
+          "tokenization": {
+            "type": "number",
+            "format": "double precision"
+          },
+          "locationId": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `locations.id`.<fk table='locations' column='id'/>",
+            "format": "bigint"
+          },
+          "taxRate": {
+            "type": "number",
+            "format": "double precision"
+          },
+          "provisionRate": {
+            "type": "number",
+            "format": "double precision"
+          },
+          "crowdFundingFeeRate": {
+            "type": "number",
+            "format": "double precision"
+          },
+          "name": {
+            "type": "string",
+            "format": "character varying"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "timestamp with time zone",
+            "default": "now()"
+          }
+        },
+        "description": "CSM mining society"
+      },
+      "asics": {
+        "required": [
+          "created_at",
+          "hashrateTHs",
+          "id",
+          "manufacturer",
+          "model",
+          "powerW"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Note:\nThis is a Primary Key.<pk/>",
+            "format": "bigint"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "timestamp with time zone",
+            "default": "now()"
+          },
+          "manufacturer": {
+            "type": "string",
+            "format": "character varying"
+          },
+          "model": {
+            "type": "string",
+            "format": "character varying"
+          },
+          "powerW": {
+            "type": "number",
+            "format": "numeric"
+          },
+          "hashrateTHs": {
+            "type": "number",
+            "format": "numeric"
+          }
+        },
+        "description": "mining asic"
+      },
+      "powerPlants": {
+        "required": [
+          "contractDuration",
+          "created_at",
+          "electricityPrice",
+          "energies",
+          "id",
+          "locationId",
+          "powerMW",
+          "renewableContract",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Note:\nThis is a Primary Key.<pk/>",
+            "format": "bigint"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "timestamp with time zone",
+            "default": "now()"
+          },
+          "contractDuration": {
+            "type": "integer",
+            "format": "integer"
+          },
+          "electricityPrice": {
+            "type": "number",
+            "format": "double precision"
+          },
+          "powerMW": {
+            "type": "number",
+            "format": "numeric"
+          },
+          "renewableContract": {
+            "type": "boolean",
+            "format": "boolean",
+            "default": false
+          },
+          "locationId": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `locations.id`.<fk table='locations' column='id'/>",
+            "format": "bigint"
+          },
+          "energies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "slug": {
+            "type": "string",
+            "format": "character varying"
+          }
+        },
+        "description": "power plant electricity supplier"
+      },
+      "contracts": {
+        "required": [
+          "created_at",
+          "csmPowerTax",
+          "csmProfitSharing",
+          "csmTaxRate",
+          "id",
+          "opPowerTax",
+          "opProfitSharing",
+          "opTaxRate",
+          "operator",
+          "pool",
+          "poolTaxRate",
+          "siteId",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Note:\nThis is a Primary Key.<pk/>",
+            "format": "bigint"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "timestamp with time zone",
+            "default": "now()"
+          },
+          "slug": {
+            "type": "string",
+            "format": "character varying"
+          },
+          "siteId": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `sites.id`.<fk table='sites' column='id'/>",
+            "format": "bigint"
+          },
+          "csmTaxRate": {
+            "type": "number",
+            "format": "double precision"
+          },
+          "csmPowerTax": {
+            "type": "number",
+            "format": "numeric"
+          },
+          "csmProfitSharing": {
+            "type": "number",
+            "format": "double precision"
+          },
+          "opTaxRate": {
+            "type": "number",
+            "format": "double precision"
+          },
+          "opPowerTax": {
+            "type": "number",
+            "format": "numeric"
+          },
+          "opProfitSharing": {
+            "type": "number",
+            "format": "double precision"
+          },
+          "pool": {
+            "type": "string",
+            "description": "Note:\nThis is a Foreign Key to `pools.name`.<fk table='pools' column='name'/>",
+            "format": "character varying"
+          },
+          "poolTaxRate": {
+            "type": "number",
+            "format": "double precision"
+          },
+          "operator": {
+            "type": "string",
+            "description": "Note:\nThis is a Foreign Key to `operators.name`.<fk table='operators' column='name'/>",
+            "format": "character varying"
+          }
+        },
+        "description": "contracts of mining services"
+      },
+      "locations": {
+        "required": ["aera", "country", "countryCode", "id"],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Note:\nThis is a Primary Key.<pk/>",
+            "format": "bigint"
+          },
+          "aera": {
+            "type": "string",
+            "format": "character varying"
+          },
+          "country": {
+            "type": "string",
+            "format": "character varying"
+          },
+          "countryCode": {
+            "type": "string",
+            "format": "character varying"
+          }
+        },
+        "description": "location of csm place"
+      },
+      "operators": {
+        "required": ["id", "logo", "name", "website"],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Note:\nThis is a Primary Key.<pk/>",
+            "format": "bigint"
+          },
+          "logo": {
+            "type": "string",
+            "format": "text"
+          },
+          "name": {
+            "type": "string",
+            "format": "character varying"
+          },
+          "website": {
+            "type": "string",
+            "format": "text"
+          }
+        },
+        "description": "mining operator"
+      },
+      "energies": {
+        "required": ["id", "type"],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Note:\nThis is a Primary Key.<pk/>",
+            "format": "bigint"
+          },
+          "type": {
+            "type": "string",
+            "format": "character varying"
+          }
+        },
+        "description": "sources of energy"
+      },
+      "financialStatements": {
+        "required": [
+          "btc",
+          "btcPrice",
+          "created_at",
+          "end",
+          "farmId",
+          "flow",
+          "id",
+          "siteId",
+          "start",
+          "usd"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Note:\nThis is a Primary Key.<pk/>",
+            "format": "bigint"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "timestamp with time zone",
+            "default": "now()"
+          },
+          "farmId": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `farms.id`.<fk table='farms' column='id'/>",
+            "format": "bigint"
+          },
+          "siteId": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `sites.id`.<fk table='sites' column='id'/>",
+            "format": "bigint"
+          },
+          "start": {
+            "type": "string",
+            "format": "timestamp with time zone"
+          },
+          "end": {
+            "type": "string",
+            "format": "timestamp with time zone"
+          },
+          "flow": {
+            "type": "string",
+            "description": "Note:\nThis is a Foreign Key to `.cash`.<fk table='' column='cash'/>",
+            "format": "character varying"
+          },
+          "btc": {
+            "type": "number",
+            "format": "numeric"
+          },
+          "usd": {
+            "type": "number",
+            "format": "numeric"
+          },
+          "btcPrice": {
+            "type": "number",
+            "format": "numeric"
+          },
+          "at": {
+            "type": "string",
+            "description": "Note:\nThis is a Foreign Key to `providers.provider`.<fk table='providers' column='provider'/>",
+            "format": "character varying"
+          }
+        },
+        "description": "financial statement"
+      },
+      "mining": {
+        "required": [
+          "created_at",
+          "day",
+          "farmId",
+          "hashrate",
+          "id",
+          "mined",
+          "siteId",
+          "uptime"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Note:\nThis is a Primary Key.<pk/>",
+            "format": "bigint"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "timestamp with time zone",
+            "default": "now()"
+          },
+          "farmId": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `farms.id`.<fk table='farms' column='id'/>",
+            "format": "bigint"
+          },
+          "siteId": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `sites.id`.<fk table='sites' column='id'/>",
+            "format": "bigint"
+          },
+          "day": {
+            "type": "string",
+            "format": "timestamp with time zone"
+          },
+          "hashrate": {
+            "type": "number",
+            "format": "numeric"
+          },
+          "uptime": {
+            "type": "number",
+            "format": "double precision"
+          },
+          "mined": {
+            "type": "number",
+            "format": "numeric"
+          }
+        },
+        "description": "mining data"
+      },
+      "sites": {
+        "required": [
+          "created_at",
+          "farmId",
+          "id",
+          "isClosed",
+          "localisationId",
+          "slug",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Note:\nThis is a Primary Key.<pk/>",
+            "format": "bigint"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "timestamp with time zone",
+            "default": "now()"
+          },
+          "farmId": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `farms.id`.<fk table='farms' column='id'/>",
+            "format": "bigint"
+          },
+          "localisationId": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `locations.id`.<fk table='locations' column='id'/>",
+            "format": "bigint"
+          },
+          "isClosed": {
+            "type": "boolean",
+            "format": "boolean",
+            "default": false
+          },
+          "closed_at": {
+            "type": "string",
+            "format": "timestamp with time zone"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "timestamp with time zone",
+            "default": "now()"
+          },
+          "slug": {
+            "type": "string",
+            "format": "character varying"
+          }
+        },
+        "description": "Mining site of a farm"
+      },
+      "flows": {
+        "required": ["cash"],
+        "type": "object",
+        "properties": {
+          "cash": {
+            "type": "string",
+            "description": "Note:\nThis is a Primary Key.<pk/>",
+            "format": "character varying"
+          }
+        },
+        "description": "cash flow oidtion"
+      },
+      "farms": {
+        "required": [
+          "created_at",
+          "id",
+          "imageLink",
+          "locationId",
+          "name",
+          "shortName",
+          "slug",
+          "status",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Note:\nThis is a Primary Key.<pk/>",
+            "format": "bigint"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "timestamp with time zone",
+            "default": "now()"
+          },
+          "name": {
+            "type": "string",
+            "format": "character varying"
+          },
+          "shortName": {
+            "type": "string",
+            "format": "character varying"
+          },
+          "slug": {
+            "type": "string",
+            "format": "character varying"
+          },
+          "imageLink": {
+            "type": "string",
+            "format": "text"
+          },
+          "status": {
+            "type": "string",
+            "format": "character varying",
+            "default": "operational"
+          },
+          "locationId": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `locations.id`.<fk table='locations' column='id'/>",
+            "format": "bigint"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "timestamp with time zone",
+            "default": "now()"
+          }
+        },
+        "description": "mining farm"
+      },
+      "tokens": {
+        "required": [
+          "address",
+          "created_at",
+          "decimals",
+          "gnosisscanUrl",
+          "id",
+          "initialPrice",
+          "name",
+          "supply",
+          "symbol",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Note:\nThis is a Primary Key.<pk/>",
+            "format": "bigint"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "timestamp with time zone",
+            "default": "now()"
+          },
+          "address": {
+            "type": "string",
+            "format": "character varying"
+          },
+          "decimals": {
+            "type": "integer",
+            "format": "bigint"
+          },
+          "gnosisscanUrl": {
+            "type": "string",
+            "format": "text"
+          },
+          "initialPrice": {
+            "type": "number",
+            "format": "numeric"
+          },
+          "name": {
+            "type": "string",
+            "format": "character varying"
+          },
+          "symbol": {
+            "type": "string",
+            "format": "character varying"
+          },
+          "supply": {
+            "type": "number",
+            "format": "numeric"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "timestamp with time zone",
+            "default": "now()"
+          },
+          "farmId": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `farms.id`.<fk table='farms' column='id'/>",
+            "format": "bigint"
+          }
+        },
+        "description": "CSM token"
+      },
+      "pools": {
+        "required": ["id", "name"],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Note:\nThis is a Primary Key.<pk/>",
+            "format": "bigint"
+          },
+          "name": {
+            "type": "string",
+            "format": "character varying"
+          }
+        },
+        "description": "mining pool"
+      },
+      "apis": {
+        "required": ["id", "poolId", "siteId", "url", "username"],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Note:\nThis is a Primary Key.<pk/>",
+            "format": "bigint"
+          },
+          "poolId": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `pools.id`.<fk table='pools' column='id'/>",
+            "format": "bigint"
+          },
+          "username": {
+            "type": "string",
+            "format": "character varying"
+          },
+          "url": {
+            "type": "string",
+            "format": "character varying"
+          },
+          "siteId": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `sites.id`.<fk table='sites' column='id'/>",
+            "format": "bigint"
+          }
+        },
+        "description": "mining pool api"
+      },
+      "providers": {
+        "required": ["provider"],
+        "type": "object",
+        "properties": {
+          "provider": {
+            "type": "string",
+            "description": "Note:\nThis is a Primary Key.<pk/>",
+            "format": "character varying"
+          }
+        },
+        "description": "service provider"
+      },
+      "where": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Note:\nThis is a Primary Key.<pk/>",
+            "format": "bigint"
+          },
+          "id_gt": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `pools.id`.<fk table='pools' column='id'/>",
+            "format": "bigint"
+          }
+        },
+        "description": "where operator"
+      }
+    },
+    "parameters": {
+      "preferParams": {
+        "name": "Prefer",
+        "in": "header",
+        "description": "Preference",
+        "schema": {
+          "type": "string",
+          "enum": ["params=single-object"]
+        }
+      },
+      "preferReturn": {
+        "name": "Prefer",
+        "in": "header",
+        "description": "Preference",
+        "schema": {
+          "type": "string",
+          "enum": ["return=representation", "return=minimal", "return=none"]
+        }
+      },
+      "preferCount": {
+        "name": "Prefer",
+        "in": "header",
+        "description": "Preference",
+        "schema": {
+          "type": "string",
+          "enum": ["count=none"]
+        }
+      },
+      "preferPost": {
+        "name": "Prefer",
+        "in": "header",
+        "description": "Preference",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "return=representation",
+            "return=minimal",
+            "return=none",
+            "resolution=ignore-duplicates",
+            "resolution=merge-duplicates"
+          ]
+        }
+      },
+      "select": {
+        "name": "select",
+        "in": "query",
+        "description": "Filtering Columns",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "on_conflict": {
+        "name": "on_conflict",
+        "in": "query",
+        "description": "On Conflict",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "order": {
+        "name": "order",
+        "in": "query",
+        "description": "Ordering",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "range": {
+        "name": "Range",
+        "in": "header",
+        "description": "Limiting and Pagination",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rangeUnit": {
+        "name": "Range-Unit",
+        "in": "header",
+        "description": "Limiting and Pagination",
+        "schema": {
+          "type": "string",
+          "default": "items"
+        }
+      },
+      "offset": {
+        "name": "offset",
+        "in": "query",
+        "description": "Limiting and Pagination",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "limit": {
+        "name": "limit",
+        "in": "query",
+        "description": "Limiting and Pagination",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.vaults.id": {
+        "name": "id",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.vaults.created_at": {
+        "name": "created_at",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.vaults.xpub": {
+        "name": "xpub",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.vaults.farmId": {
+        "name": "farmId",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.containers.id": {
+        "name": "id",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.containers.created_at": {
+        "name": "created_at",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.containers.asicId": {
+        "name": "asicId",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.containers.units": {
+        "name": "units",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.containers.cost": {
+        "name": "cost",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.containers.start": {
+        "name": "start",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.containers.end": {
+        "name": "end",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.containers.locationId": {
+        "name": "locationId",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.containers.siteId": {
+        "name": "siteId",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.containers.slug": {
+        "name": "slug",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.societies.id": {
+        "name": "id",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.societies.created_at": {
+        "name": "created_at",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.societies.csmSaShare": {
+        "name": "csmSaShare",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.societies.registrationNumber": {
+        "name": "registrationNumber",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.societies.shareCapital": {
+        "name": "shareCapital",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.societies.tokenization": {
+        "name": "tokenization",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.societies.locationId": {
+        "name": "locationId",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.societies.taxRate": {
+        "name": "taxRate",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.societies.provisionRate": {
+        "name": "provisionRate",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.societies.crowdFundingFeeRate": {
+        "name": "crowdFundingFeeRate",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.societies.name": {
+        "name": "name",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.societies.updated_at": {
+        "name": "updated_at",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.asics.id": {
+        "name": "id",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.asics.created_at": {
+        "name": "created_at",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.asics.manufacturer": {
+        "name": "manufacturer",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.asics.model": {
+        "name": "model",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.asics.powerW": {
+        "name": "powerW",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.asics.hashrateTHs": {
+        "name": "hashrateTHs",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.powerPlants.id": {
+        "name": "id",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.powerPlants.created_at": {
+        "name": "created_at",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.powerPlants.contractDuration": {
+        "name": "contractDuration",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.powerPlants.electricityPrice": {
+        "name": "electricityPrice",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.powerPlants.powerMW": {
+        "name": "powerMW",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.powerPlants.renewableContract": {
+        "name": "renewableContract",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.powerPlants.locationId": {
+        "name": "locationId",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.powerPlants.energies": {
+        "name": "energies",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.powerPlants.slug": {
+        "name": "slug",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.contracts.id": {
+        "name": "id",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.contracts.created_at": {
+        "name": "created_at",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.contracts.slug": {
+        "name": "slug",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.contracts.siteId": {
+        "name": "siteId",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.contracts.csmTaxRate": {
+        "name": "csmTaxRate",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.contracts.csmPowerTax": {
+        "name": "csmPowerTax",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.contracts.csmProfitSharing": {
+        "name": "csmProfitSharing",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.contracts.opTaxRate": {
+        "name": "opTaxRate",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.contracts.opPowerTax": {
+        "name": "opPowerTax",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.contracts.opProfitSharing": {
+        "name": "opProfitSharing",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.contracts.pool": {
+        "name": "pool",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.contracts.poolTaxRate": {
+        "name": "poolTaxRate",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.contracts.operator": {
+        "name": "operator",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.locations.id": {
+        "name": "id",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.locations.aera": {
+        "name": "aera",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.locations.country": {
+        "name": "country",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.locations.countryCode": {
+        "name": "countryCode",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.operators.id": {
+        "name": "id",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.operators.logo": {
+        "name": "logo",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.operators.name": {
+        "name": "name",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.operators.website": {
+        "name": "website",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.energies.id": {
+        "name": "id",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.energies.type": {
+        "name": "type",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.financialStatements.id": {
+        "name": "id",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.financialStatements.created_at": {
+        "name": "created_at",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.financialStatements.farmId": {
+        "name": "farmId",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.financialStatements.siteId": {
+        "name": "siteId",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.financialStatements.start": {
+        "name": "start",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.financialStatements.end": {
+        "name": "end",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.financialStatements.flow": {
+        "name": "flow",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.financialStatements.btc": {
+        "name": "btc",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.financialStatements.usd": {
+        "name": "usd",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.financialStatements.btcPrice": {
+        "name": "btcPrice",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.financialStatements.at": {
+        "name": "at",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.mining.id": {
+        "name": "id",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.mining.created_at": {
+        "name": "created_at",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.mining.farmId": {
+        "name": "farmId",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.mining.siteId": {
+        "name": "siteId",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.mining.day": {
+        "name": "day",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.mining.hashrate": {
+        "name": "hashrate",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.mining.uptime": {
+        "name": "uptime",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.mining.mined": {
+        "name": "mined",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.sites.id": {
+        "name": "id",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.sites.created_at": {
+        "name": "created_at",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.sites.farmId": {
+        "name": "farmId",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.sites.localisationId": {
+        "name": "localisationId",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.sites.isClosed": {
+        "name": "isClosed",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.sites.closed_at": {
+        "name": "closed_at",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.sites.updated_at": {
+        "name": "updated_at",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.sites.slug": {
+        "name": "slug",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter..cash": {
+        "name": "cash",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.farms.id": {
+        "name": "id",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.farms.created_at": {
+        "name": "created_at",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.farms.name": {
+        "name": "name",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.farms.shortName": {
+        "name": "shortName",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.farms.slug": {
+        "name": "slug",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.farms.imageLink": {
+        "name": "imageLink",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.farms.status": {
+        "name": "status",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.farms.locationId": {
+        "name": "locationId",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.farms.updated_at": {
+        "name": "updated_at",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.tokens.id": {
+        "name": "id",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.tokens.created_at": {
+        "name": "created_at",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.tokens.address": {
+        "name": "address",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.tokens.decimals": {
+        "name": "decimals",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.tokens.gnosisscanUrl": {
+        "name": "gnosisscanUrl",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.tokens.initialPrice": {
+        "name": "initialPrice",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.tokens.name": {
+        "name": "name",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.tokens.symbol": {
+        "name": "symbol",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.tokens.supply": {
+        "name": "supply",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.tokens.updated_at": {
+        "name": "updated_at",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.tokens.farmId": {
+        "name": "farmId",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.pools.id": {
+        "name": "id",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.pools.name": {
+        "name": "name",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.apis.id": {
+        "name": "id",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.apis.poolId": {
+        "name": "poolId",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.apis.username": {
+        "name": "username",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.apis.url": {
+        "name": "url",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.apis.siteId": {
+        "name": "siteId",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.providers.provider": {
+        "name": "provider",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "requestBodies": {
+      "body.vaults": {
+        "description": "vaults",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/vaults"
+            }
+          }
+        },
+        "required": false
+      },
+      "body.containers": {
+        "description": "containers",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/containers"
+            }
+          }
+        },
+        "required": false
+      },
+      "body.societies": {
+        "description": "societies",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/societies"
+            }
+          }
+        },
+        "required": false
+      },
+      "body.asics": {
+        "description": "asics",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/asics"
+            }
+          }
+        },
+        "required": false
+      },
+      "body.powerPlants": {
+        "description": "powerPlants",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/powerPlants"
+            }
+          }
+        },
+        "required": false
+      },
+      "body.contracts": {
+        "description": "contracts",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/contracts"
+            }
+          }
+        },
+        "required": false
+      },
+      "body.locations": {
+        "description": "locations",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/locations"
+            }
+          }
+        },
+        "required": false
+      },
+      "body.operators": {
+        "description": "operators",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/operators"
+            }
+          }
+        },
+        "required": false
+      },
+      "body.energies": {
+        "description": "energies",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/energies"
+            }
+          }
+        },
+        "required": false
+      },
+      "body.financialStatements": {
+        "description": "financialStatements",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/financialStatements"
+            }
+          }
+        },
+        "required": false
+      },
+      "body.mining": {
+        "description": "mining",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/mining"
+            }
+          }
+        },
+        "required": false
+      },
+      "body.sites": {
+        "description": "sites",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/sites"
+            }
+          }
+        },
+        "required": false
+      },
+      "body.": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/"
+            }
+          }
+        },
+        "required": false
+      },
+      "body.farms": {
+        "description": "farms",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/farms"
+            }
+          }
+        },
+        "required": false
+      },
+      "body.tokens": {
+        "description": "tokens",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/tokens"
+            }
+          }
+        },
+        "required": false
+      },
+      "body.pools": {
+        "description": "pools",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/pools"
+            }
+          }
+        },
+        "required": false
+      },
+      "body.apis": {
+        "description": "apis",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/apis"
+            }
+          }
+        },
+        "required": false
+      },
+      "body.providers": {
+        "description": "providers",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/providers"
+            }
+          }
+        },
+        "required": false
+      }
+    }
+  }
+}
