@@ -13,9 +13,13 @@
     "@graphql-mesh/graphql": "^0.95.0",
     "@graphql-mesh/grpc": "^0.95.0",
     "@graphql-mesh/openapi": "^0.95.3",
-    "@graphql-mesh/transform-filter-schema": "^0.95.0",
-    "@graphql-mesh/transform-rename": "^0.95.0",
-    "graphql": "^16.7.1",
-    "tslib": "^2.6.1"
+    "@graphql-mesh/transform-filter-schema": "^0.102.5",
+    "@graphql-mesh/transform-rename": "^0.102.5",
+    "@graphql-mesh/transform-replace-field": "^0.102.5",
+    "@graphql-mesh/transform-federation": "^0.102.5",
+    "graphql": "^16.9.0",
+    "tslib": "^2.6.1",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
   }
 }
