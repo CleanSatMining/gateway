@@ -15,9 +15,24 @@
     }
   ],
   "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Introspection"
+        ],
+        "summary": "OpenAPI description (this document)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/vaults": {
       "get": {
-        "tags": ["vaults"],
+        "tags": [
+          "vaults"
+        ],
         "summary": "CSM society bitcoin vault",
         "parameters": [
           {
@@ -103,18 +118,9 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["count=none"]
-            }
-          },
-          {
-            "name": "where",
-            "in": "query",
-            "description": "where",
-            "schema": {
-              "type": "string",
-              "items": {
-                "$ref": "#/components/schemas/where"
-              }
+              "enum": [
+                "count=none"
+              ]
             }
           }
         ],
@@ -133,13 +139,14 @@
             }
           },
           "206": {
-            "description": "Partial Content",
-            "content": {}
+            "description": "Partial Content"
           }
         }
       },
       "post": {
-        "tags": ["vaults"],
+        "tags": [
+          "vaults"
+        ],
         "summary": "CSM society bitcoin vault",
         "parameters": [
           {
@@ -185,7 +192,9 @@
         "x-codegen-request-body-name": "vaults"
       },
       "delete": {
-        "tags": ["vaults"],
+        "tags": [
+          "vaults"
+        ],
         "summary": "CSM society bitcoin vault",
         "parameters": [
           {
@@ -222,7 +231,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -233,7 +246,9 @@
         }
       },
       "patch": {
-        "tags": ["vaults"],
+        "tags": [
+          "vaults"
+        ],
         "summary": "CSM society bitcoin vault",
         "parameters": [
           {
@@ -270,7 +285,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -295,7 +314,9 @@
     },
     "/containers": {
       "get": {
-        "tags": ["containers"],
+        "tags": [
+          "containers"
+        ],
         "summary": "asics container",
         "parameters": [
           {
@@ -423,7 +444,9 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["count=none"]
+              "enum": [
+                "count=none"
+              ]
             }
           }
         ],
@@ -447,7 +470,9 @@
         }
       },
       "post": {
-        "tags": ["containers"],
+        "tags": [
+          "containers"
+        ],
         "summary": "asics container",
         "parameters": [
           {
@@ -493,7 +518,9 @@
         "x-codegen-request-body-name": "containers"
       },
       "delete": {
-        "tags": ["containers"],
+        "tags": [
+          "containers"
+        ],
         "summary": "asics container",
         "parameters": [
           {
@@ -572,7 +599,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -583,7 +614,9 @@
         }
       },
       "patch": {
-        "tags": ["containers"],
+        "tags": [
+          "containers"
+        ],
         "summary": "asics container",
         "parameters": [
           {
@@ -662,7 +695,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -687,7 +724,9 @@
     },
     "/societies": {
       "get": {
-        "tags": ["societies"],
+        "tags": [
+          "societies"
+        ],
         "summary": "CSM mining society",
         "parameters": [
           {
@@ -769,6 +808,13 @@
           },
           {
             "name": "updated_at",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "farmId",
             "in": "query",
             "schema": {
               "type": "string"
@@ -829,7 +875,9 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["count=none"]
+              "enum": [
+                "count=none"
+              ]
             }
           }
         ],
@@ -853,7 +901,9 @@
         }
       },
       "post": {
-        "tags": ["societies"],
+        "tags": [
+          "societies"
+        ],
         "summary": "CSM mining society",
         "parameters": [
           {
@@ -899,7 +949,9 @@
         "x-codegen-request-body-name": "societies"
       },
       "delete": {
-        "tags": ["societies"],
+        "tags": [
+          "societies"
+        ],
         "summary": "CSM mining society",
         "parameters": [
           {
@@ -987,12 +1039,23 @@
             }
           },
           {
+            "name": "farmId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Prefer",
             "in": "header",
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -1003,7 +1066,9 @@
         }
       },
       "patch": {
-        "tags": ["societies"],
+        "tags": [
+          "societies"
+        ],
         "summary": "CSM mining society",
         "parameters": [
           {
@@ -1091,12 +1156,23 @@
             }
           },
           {
+            "name": "farmId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Prefer",
             "in": "header",
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -1121,7 +1197,9 @@
     },
     "/asics": {
       "get": {
-        "tags": ["asics"],
+        "tags": [
+          "asics"
+        ],
         "summary": "mining asic",
         "parameters": [
           {
@@ -1221,7 +1299,9 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["count=none"]
+              "enum": [
+                "count=none"
+              ]
             }
           }
         ],
@@ -1245,7 +1325,9 @@
         }
       },
       "post": {
-        "tags": ["asics"],
+        "tags": [
+          "asics"
+        ],
         "summary": "mining asic",
         "parameters": [
           {
@@ -1291,7 +1373,9 @@
         "x-codegen-request-body-name": "asics"
       },
       "delete": {
-        "tags": ["asics"],
+        "tags": [
+          "asics"
+        ],
         "summary": "mining asic",
         "parameters": [
           {
@@ -1342,7 +1426,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -1353,7 +1441,9 @@
         }
       },
       "patch": {
-        "tags": ["asics"],
+        "tags": [
+          "asics"
+        ],
         "summary": "mining asic",
         "parameters": [
           {
@@ -1404,7 +1494,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -1429,7 +1523,9 @@
     },
     "/powerPlants": {
       "get": {
-        "tags": ["powerPlants"],
+        "tags": [
+          "powerPlants"
+        ],
         "summary": "power plant electricity supplier",
         "parameters": [
           {
@@ -1447,28 +1543,7 @@
             }
           },
           {
-            "name": "contractDuration",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "electricityPrice",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "powerMW",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "renewableContract",
             "in": "query",
             "schema": {
               "type": "string"
@@ -1550,7 +1625,9 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["count=none"]
+              "enum": [
+                "count=none"
+              ]
             }
           }
         ],
@@ -1574,7 +1651,9 @@
         }
       },
       "post": {
-        "tags": ["powerPlants"],
+        "tags": [
+          "powerPlants"
+        ],
         "summary": "power plant electricity supplier",
         "parameters": [
           {
@@ -1620,7 +1699,9 @@
         "x-codegen-request-body-name": "powerPlants"
       },
       "delete": {
-        "tags": ["powerPlants"],
+        "tags": [
+          "powerPlants"
+        ],
         "summary": "power plant electricity supplier",
         "parameters": [
           {
@@ -1638,28 +1719,7 @@
             }
           },
           {
-            "name": "contractDuration",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "electricityPrice",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "powerMW",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "renewableContract",
             "in": "query",
             "schema": {
               "type": "string"
@@ -1692,7 +1752,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -1703,7 +1767,9 @@
         }
       },
       "patch": {
-        "tags": ["powerPlants"],
+        "tags": [
+          "powerPlants"
+        ],
         "summary": "power plant electricity supplier",
         "parameters": [
           {
@@ -1721,28 +1787,7 @@
             }
           },
           {
-            "name": "contractDuration",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "electricityPrice",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "powerMW",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "renewableContract",
             "in": "query",
             "schema": {
               "type": "string"
@@ -1775,7 +1820,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -1800,7 +1849,9 @@
     },
     "/contracts": {
       "get": {
-        "tags": ["contracts"],
+        "tags": [
+          "contracts"
+        ],
         "summary": "contracts of mining services",
         "parameters": [
           {
@@ -1889,6 +1940,27 @@
           },
           {
             "name": "operator",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "electricityPrice",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "electricityContractDuration",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "electricityContractRenewable",
             "in": "query",
             "schema": {
               "type": "string"
@@ -1949,7 +2021,9 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["count=none"]
+              "enum": [
+                "count=none"
+              ]
             }
           }
         ],
@@ -1973,7 +2047,9 @@
         }
       },
       "post": {
-        "tags": ["contracts"],
+        "tags": [
+          "contracts"
+        ],
         "summary": "contracts of mining services",
         "parameters": [
           {
@@ -2019,7 +2095,9 @@
         "x-codegen-request-body-name": "contracts"
       },
       "delete": {
-        "tags": ["contracts"],
+        "tags": [
+          "contracts"
+        ],
         "summary": "contracts of mining services",
         "parameters": [
           {
@@ -2114,12 +2192,37 @@
             }
           },
           {
+            "name": "electricityPrice",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "electricityContractDuration",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "electricityContractRenewable",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Prefer",
             "in": "header",
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -2130,7 +2233,9 @@
         }
       },
       "patch": {
-        "tags": ["contracts"],
+        "tags": [
+          "contracts"
+        ],
         "summary": "contracts of mining services",
         "parameters": [
           {
@@ -2225,12 +2330,37 @@
             }
           },
           {
+            "name": "electricityPrice",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "electricityContractDuration",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "electricityContractRenewable",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Prefer",
             "in": "header",
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -2255,7 +2385,9 @@
     },
     "/locations": {
       "get": {
-        "tags": ["locations"],
+        "tags": [
+          "locations"
+        ],
         "summary": "location of csm place",
         "parameters": [
           {
@@ -2341,7 +2473,9 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["count=none"]
+              "enum": [
+                "count=none"
+              ]
             }
           }
         ],
@@ -2365,7 +2499,9 @@
         }
       },
       "post": {
-        "tags": ["locations"],
+        "tags": [
+          "locations"
+        ],
         "summary": "location of csm place",
         "parameters": [
           {
@@ -2411,7 +2547,9 @@
         "x-codegen-request-body-name": "locations"
       },
       "delete": {
-        "tags": ["locations"],
+        "tags": [
+          "locations"
+        ],
         "summary": "location of csm place",
         "parameters": [
           {
@@ -2448,7 +2586,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -2459,7 +2601,9 @@
         }
       },
       "patch": {
-        "tags": ["locations"],
+        "tags": [
+          "locations"
+        ],
         "summary": "location of csm place",
         "parameters": [
           {
@@ -2496,7 +2640,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -2521,7 +2669,9 @@
     },
     "/operators": {
       "get": {
-        "tags": ["operators"],
+        "tags": [
+          "operators"
+        ],
         "summary": "mining operator",
         "parameters": [
           {
@@ -2607,7 +2757,9 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["count=none"]
+              "enum": [
+                "count=none"
+              ]
             }
           }
         ],
@@ -2631,7 +2783,9 @@
         }
       },
       "post": {
-        "tags": ["operators"],
+        "tags": [
+          "operators"
+        ],
         "summary": "mining operator",
         "parameters": [
           {
@@ -2677,7 +2831,9 @@
         "x-codegen-request-body-name": "operators"
       },
       "delete": {
-        "tags": ["operators"],
+        "tags": [
+          "operators"
+        ],
         "summary": "mining operator",
         "parameters": [
           {
@@ -2714,7 +2870,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -2725,7 +2885,9 @@
         }
       },
       "patch": {
-        "tags": ["operators"],
+        "tags": [
+          "operators"
+        ],
         "summary": "mining operator",
         "parameters": [
           {
@@ -2762,7 +2924,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -2787,7 +2953,9 @@
     },
     "/energies": {
       "get": {
-        "tags": ["energies"],
+        "tags": [
+          "energies"
+        ],
         "summary": "sources of energy",
         "parameters": [
           {
@@ -2859,7 +3027,9 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["count=none"]
+              "enum": [
+                "count=none"
+              ]
             }
           }
         ],
@@ -2883,7 +3053,9 @@
         }
       },
       "post": {
-        "tags": ["energies"],
+        "tags": [
+          "energies"
+        ],
         "summary": "sources of energy",
         "parameters": [
           {
@@ -2929,7 +3101,9 @@
         "x-codegen-request-body-name": "energies"
       },
       "delete": {
-        "tags": ["energies"],
+        "tags": [
+          "energies"
+        ],
         "summary": "sources of energy",
         "parameters": [
           {
@@ -2952,7 +3126,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -2963,7 +3141,9 @@
         }
       },
       "patch": {
-        "tags": ["energies"],
+        "tags": [
+          "energies"
+        ],
         "summary": "sources of energy",
         "parameters": [
           {
@@ -2986,7 +3166,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -3011,7 +3195,9 @@
     },
     "/financialStatements": {
       "get": {
-        "tags": ["financialStatements"],
+        "tags": [
+          "financialStatements"
+        ],
         "summary": "financial statement",
         "parameters": [
           {
@@ -3146,7 +3332,9 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["count=none"]
+              "enum": [
+                "count=none"
+              ]
             }
           }
         ],
@@ -3170,7 +3358,9 @@
         }
       },
       "post": {
-        "tags": ["financialStatements"],
+        "tags": [
+          "financialStatements"
+        ],
         "summary": "financial statement",
         "parameters": [
           {
@@ -3216,7 +3406,9 @@
         "x-codegen-request-body-name": "financialStatements"
       },
       "delete": {
-        "tags": ["financialStatements"],
+        "tags": [
+          "financialStatements"
+        ],
         "summary": "financial statement",
         "parameters": [
           {
@@ -3302,7 +3494,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -3313,7 +3509,9 @@
         }
       },
       "patch": {
-        "tags": ["financialStatements"],
+        "tags": [
+          "financialStatements"
+        ],
         "summary": "financial statement",
         "parameters": [
           {
@@ -3399,7 +3597,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -3424,7 +3626,9 @@
     },
     "/mining": {
       "get": {
-        "tags": ["mining"],
+        "tags": [
+          "mining"
+        ],
         "summary": "mining data",
         "parameters": [
           {
@@ -3538,7 +3742,9 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["count=none"]
+              "enum": [
+                "count=none"
+              ]
             }
           }
         ],
@@ -3562,7 +3768,9 @@
         }
       },
       "post": {
-        "tags": ["mining"],
+        "tags": [
+          "mining"
+        ],
         "summary": "mining data",
         "parameters": [
           {
@@ -3608,7 +3816,9 @@
         "x-codegen-request-body-name": "mining"
       },
       "delete": {
-        "tags": ["mining"],
+        "tags": [
+          "mining"
+        ],
         "summary": "mining data",
         "parameters": [
           {
@@ -3673,7 +3883,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -3684,7 +3898,9 @@
         }
       },
       "patch": {
-        "tags": ["mining"],
+        "tags": [
+          "mining"
+        ],
         "summary": "mining data",
         "parameters": [
           {
@@ -3749,7 +3965,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -3774,7 +3994,9 @@
     },
     "/sites": {
       "get": {
-        "tags": ["sites"],
+        "tags": [
+          "sites"
+        ],
         "summary": "Mining site of a farm",
         "parameters": [
           {
@@ -3828,6 +4050,20 @@
           },
           {
             "name": "slug",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "powerPlantId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "operatorId",
             "in": "query",
             "schema": {
               "type": "string"
@@ -3888,7 +4124,9 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["count=none"]
+              "enum": [
+                "count=none"
+              ]
             }
           }
         ],
@@ -3912,7 +4150,9 @@
         }
       },
       "post": {
-        "tags": ["sites"],
+        "tags": [
+          "sites"
+        ],
         "summary": "Mining site of a farm",
         "parameters": [
           {
@@ -3958,7 +4198,9 @@
         "x-codegen-request-body-name": "sites"
       },
       "delete": {
-        "tags": ["sites"],
+        "tags": [
+          "sites"
+        ],
         "summary": "Mining site of a farm",
         "parameters": [
           {
@@ -4018,12 +4260,30 @@
             }
           },
           {
+            "name": "powerPlantId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "operatorId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Prefer",
             "in": "header",
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -4034,7 +4294,9 @@
         }
       },
       "patch": {
-        "tags": ["sites"],
+        "tags": [
+          "sites"
+        ],
         "summary": "Mining site of a farm",
         "parameters": [
           {
@@ -4094,12 +4356,30 @@
             }
           },
           {
+            "name": "powerPlantId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "operatorId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Prefer",
             "in": "header",
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -4124,7 +4404,9 @@
     },
     "/flows": {
       "get": {
-        "tags": ["flows"],
+        "tags": [
+          "flows"
+        ],
         "summary": "cash flow oidtion",
         "parameters": [
           {
@@ -4189,7 +4471,9 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["count=none"]
+              "enum": [
+                "count=none"
+              ]
             }
           }
         ],
@@ -4213,7 +4497,9 @@
         }
       },
       "post": {
-        "tags": ["flows"],
+        "tags": [
+          "flows"
+        ],
         "summary": "cash flow oidtion",
         "parameters": [
           {
@@ -4259,7 +4545,9 @@
         "x-codegen-request-body-name": "flows"
       },
       "delete": {
-        "tags": ["flows"],
+        "tags": [
+          "flows"
+        ],
         "summary": "cash flow oidtion",
         "parameters": [
           {
@@ -4275,7 +4563,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -4286,7 +4578,9 @@
         }
       },
       "patch": {
-        "tags": ["flows"],
+        "tags": [
+          "flows"
+        ],
         "summary": "cash flow oidtion",
         "parameters": [
           {
@@ -4302,7 +4596,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -4327,7 +4625,9 @@
     },
     "/farms": {
       "get": {
-        "tags": ["farms"],
+        "tags": [
+          "farms"
+        ],
         "summary": "mining farm",
         "parameters": [
           {
@@ -4448,7 +4748,9 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["count=none"]
+              "enum": [
+                "count=none"
+              ]
             }
           }
         ],
@@ -4472,7 +4774,9 @@
         }
       },
       "post": {
-        "tags": ["farms"],
+        "tags": [
+          "farms"
+        ],
         "summary": "mining farm",
         "parameters": [
           {
@@ -4518,7 +4822,9 @@
         "x-codegen-request-body-name": "farms"
       },
       "delete": {
-        "tags": ["farms"],
+        "tags": [
+          "farms"
+        ],
         "summary": "mining farm",
         "parameters": [
           {
@@ -4590,7 +4896,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -4601,7 +4911,9 @@
         }
       },
       "patch": {
-        "tags": ["farms"],
+        "tags": [
+          "farms"
+        ],
         "summary": "mining farm",
         "parameters": [
           {
@@ -4673,7 +4985,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -4698,7 +5014,9 @@
     },
     "/tokens": {
       "get": {
-        "tags": ["tokens"],
+        "tags": [
+          "tokens"
+        ],
         "summary": "CSM token",
         "parameters": [
           {
@@ -4833,7 +5151,9 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["count=none"]
+              "enum": [
+                "count=none"
+              ]
             }
           }
         ],
@@ -4857,7 +5177,9 @@
         }
       },
       "post": {
-        "tags": ["tokens"],
+        "tags": [
+          "tokens"
+        ],
         "summary": "CSM token",
         "parameters": [
           {
@@ -4903,7 +5225,9 @@
         "x-codegen-request-body-name": "tokens"
       },
       "delete": {
-        "tags": ["tokens"],
+        "tags": [
+          "tokens"
+        ],
         "summary": "CSM token",
         "parameters": [
           {
@@ -4989,7 +5313,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -5000,7 +5328,9 @@
         }
       },
       "patch": {
-        "tags": ["tokens"],
+        "tags": [
+          "tokens"
+        ],
         "summary": "CSM token",
         "parameters": [
           {
@@ -5086,7 +5416,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -5111,7 +5445,9 @@
     },
     "/pools": {
       "get": {
-        "tags": ["pools"],
+        "tags": [
+          "pools"
+        ],
         "summary": "mining pool",
         "parameters": [
           {
@@ -5183,7 +5519,9 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["count=none"]
+              "enum": [
+                "count=none"
+              ]
             }
           }
         ],
@@ -5207,7 +5545,9 @@
         }
       },
       "post": {
-        "tags": ["pools"],
+        "tags": [
+          "pools"
+        ],
         "summary": "mining pool",
         "parameters": [
           {
@@ -5253,7 +5593,9 @@
         "x-codegen-request-body-name": "pools"
       },
       "delete": {
-        "tags": ["pools"],
+        "tags": [
+          "pools"
+        ],
         "summary": "mining pool",
         "parameters": [
           {
@@ -5276,7 +5618,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -5287,7 +5633,9 @@
         }
       },
       "patch": {
-        "tags": ["pools"],
+        "tags": [
+          "pools"
+        ],
         "summary": "mining pool",
         "parameters": [
           {
@@ -5310,7 +5658,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -5335,7 +5687,9 @@
     },
     "/apis": {
       "get": {
-        "tags": ["apis"],
+        "tags": [
+          "apis"
+        ],
         "summary": "mining pool api",
         "parameters": [
           {
@@ -5428,7 +5782,9 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["count=none"]
+              "enum": [
+                "count=none"
+              ]
             }
           }
         ],
@@ -5452,7 +5808,9 @@
         }
       },
       "post": {
-        "tags": ["apis"],
+        "tags": [
+          "apis"
+        ],
         "summary": "mining pool api",
         "parameters": [
           {
@@ -5498,7 +5856,9 @@
         "x-codegen-request-body-name": "apis"
       },
       "delete": {
-        "tags": ["apis"],
+        "tags": [
+          "apis"
+        ],
         "summary": "mining pool api",
         "parameters": [
           {
@@ -5542,7 +5902,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -5553,7 +5917,9 @@
         }
       },
       "patch": {
-        "tags": ["apis"],
+        "tags": [
+          "apis"
+        ],
         "summary": "mining pool api",
         "parameters": [
           {
@@ -5597,7 +5963,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -5622,7 +5992,9 @@
     },
     "/providers": {
       "get": {
-        "tags": ["providers"],
+        "tags": [
+          "providers"
+        ],
         "summary": "service provider",
         "parameters": [
           {
@@ -5687,7 +6059,9 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["count=none"]
+              "enum": [
+                "count=none"
+              ]
             }
           }
         ],
@@ -5711,7 +6085,9 @@
         }
       },
       "post": {
-        "tags": ["providers"],
+        "tags": [
+          "providers"
+        ],
         "summary": "service provider",
         "parameters": [
           {
@@ -5757,7 +6133,9 @@
         "x-codegen-request-body-name": "providers"
       },
       "delete": {
-        "tags": ["providers"],
+        "tags": [
+          "providers"
+        ],
         "summary": "service provider",
         "parameters": [
           {
@@ -5773,7 +6151,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -5784,7 +6166,9 @@
         }
       },
       "patch": {
-        "tags": ["providers"],
+        "tags": [
+          "providers"
+        ],
         "summary": "service provider",
         "parameters": [
           {
@@ -5800,7 +6184,11 @@
             "description": "Preference",
             "schema": {
               "type": "string",
-              "enum": ["return=representation", "return=minimal", "return=none"]
+              "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+              ]
             }
           }
         ],
@@ -5827,7 +6215,12 @@
   "components": {
     "schemas": {
       "vaults": {
-        "required": ["created_at", "farmId", "id", "xpub"],
+        "required": [
+          "created_at",
+          "farmId",
+          "id",
+          "xpub"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -5848,6 +6241,11 @@
             "type": "integer",
             "description": "Note:\nThis is a Foreign Key to `farms.id`.<fk table='farms' column='id'/>",
             "format": "bigint"
+          },
+          "farm": {
+            "type": "object",
+            "description": "farm",
+            "$ref": "#/components/schemas/farms"
           }
         },
         "description": "CSM society bitcoin vault"
@@ -5909,6 +6307,21 @@
           "slug": {
             "type": "string",
             "format": "character varying"
+          },
+          "site": {
+            "type": "object",
+            "description": "site",
+            "$ref": "#/components/schemas/sites"
+          },
+          "asic": {
+            "type": "object",
+            "description": "asic",
+            "$ref": "#/components/schemas/asics"
+          },
+          "location": {
+            "type": "object",
+            "description": "location",
+            "$ref": "#/components/schemas/locations"
           }
         },
         "description": "asics container"
@@ -5918,6 +6331,7 @@
           "created_at",
           "crowdFundingFeeRate",
           "csmSaShare",
+          "farmId",
           "id",
           "locationId",
           "name",
@@ -5981,6 +6395,21 @@
             "type": "string",
             "format": "timestamp with time zone",
             "default": "now()"
+          },
+          "farmId": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `farms.id`.<fk table='farms' column='id'/>",
+            "format": "bigint"
+          },
+          "farm": {
+            "type": "object",
+            "description": "farm",
+            "$ref": "#/components/schemas/farms"
+          },
+          "location": {
+            "type": "object",
+            "description": "location",
+            "$ref": "#/components/schemas/locations"
           }
         },
         "description": "CSM mining society"
@@ -6027,14 +6456,11 @@
       },
       "powerPlants": {
         "required": [
-          "contractDuration",
           "created_at",
-          "electricityPrice",
           "energies",
           "id",
           "locationId",
           "powerMW",
-          "renewableContract",
           "slug"
         ],
         "type": "object",
@@ -6049,22 +6475,9 @@
             "format": "timestamp with time zone",
             "default": "now()"
           },
-          "contractDuration": {
-            "type": "integer",
-            "format": "integer"
-          },
-          "electricityPrice": {
-            "type": "number",
-            "format": "double precision"
-          },
           "powerMW": {
             "type": "number",
             "format": "numeric"
-          },
-          "renewableContract": {
-            "type": "boolean",
-            "format": "boolean",
-            "default": false
           },
           "locationId": {
             "type": "integer",
@@ -6080,6 +6493,11 @@
           "slug": {
             "type": "string",
             "format": "character varying"
+          },
+          "location": {
+            "type": "object",
+            "description": "location",
+            "$ref": "#/components/schemas/locations"
           }
         },
         "description": "power plant electricity supplier"
@@ -6090,6 +6508,9 @@
           "csmPowerTax",
           "csmProfitSharing",
           "csmTaxRate",
+          "electricityContractDuration",
+          "electricityContractRenewable",
+          "electricityPrice",
           "id",
           "opPowerTax",
           "opProfitSharing",
@@ -6158,12 +6579,35 @@
             "type": "string",
             "description": "Note:\nThis is a Foreign Key to `operators.name`.<fk table='operators' column='name'/>",
             "format": "character varying"
+          },
+          "electricityPrice": {
+            "type": "number",
+            "format": "numeric"
+          },
+          "electricityContractDuration": {
+            "type": "number",
+            "format": "numeric"
+          },
+          "electricityContractRenewable": {
+            "type": "boolean",
+            "format": "boolean",
+            "default": false
+          },
+          "site": {
+            "type": "object",
+            "description": "site",
+            "$ref": "#/components/schemas/sites"
           }
         },
         "description": "contracts of mining services"
       },
       "locations": {
-        "required": ["aera", "country", "countryCode", "id"],
+        "required": [
+          "aera",
+          "country",
+          "countryCode",
+          "id"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -6187,7 +6631,12 @@
         "description": "location of csm place"
       },
       "operators": {
-        "required": ["id", "logo", "name", "website"],
+        "required": [
+          "id",
+          "logo",
+          "name",
+          "website"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -6211,7 +6660,10 @@
         "description": "mining operator"
       },
       "energies": {
-        "required": ["id", "type"],
+        "required": [
+          "id",
+          "type"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -6271,7 +6723,7 @@
           },
           "flow": {
             "type": "string",
-            "description": "Note:\nThis is a Foreign Key to `.cash`.<fk table='' column='cash'/>",
+            "description": "Note:\nThis is a Foreign Key to `flows.cash`.<fk table='flows' column='cash'/>",
             "format": "character varying"
           },
           "btc": {
@@ -6290,6 +6742,16 @@
             "type": "string",
             "description": "Note:\nThis is a Foreign Key to `providers.provider`.<fk table='providers' column='provider'/>",
             "format": "character varying"
+          },
+          "site": {
+            "type": "object",
+            "description": "site",
+            "$ref": "#/components/schemas/sites"
+          },
+          "farm": {
+            "type": "object",
+            "description": "farm",
+            "$ref": "#/components/schemas/farms"
           }
         },
         "description": "financial statement"
@@ -6342,6 +6804,16 @@
           "mined": {
             "type": "number",
             "format": "numeric"
+          },
+          "site": {
+            "type": "object",
+            "description": "site",
+            "$ref": "#/components/schemas/sites"
+          },
+          "farm": {
+            "type": "object",
+            "description": "farm",
+            "$ref": "#/components/schemas/farms"
           }
         },
         "description": "mining data"
@@ -6353,6 +6825,8 @@
           "id",
           "isClosed",
           "localisationId",
+          "operatorId",
+          "powerPlantId",
           "slug",
           "updated_at"
         ],
@@ -6395,12 +6869,56 @@
           "slug": {
             "type": "string",
             "format": "character varying"
+          },
+          "powerPlantId": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `powerPlants.id`.<fk table='powerPlants' column='id'/>",
+            "format": "bigint"
+          },
+          "operatorId": {
+            "type": "integer",
+            "description": "Note:\nThis is a Foreign Key to `operators.id`.<fk table='operators' column='id'/>",
+            "format": "bigint"
+          },
+          "farm": {
+            "type": "object",
+            "description": "farm",
+            "$ref": "#/components/schemas/farms"
+          },
+          "powerPlant": {
+            "type": "object",
+            "description": "powerPlant",
+            "$ref": "#/components/schemas/powerPlants"
+          },
+          "operator": {
+            "type": "object",
+            "description": "operator",
+            "$ref": "#/components/schemas/operators"
+          },
+          "containers": {
+            "type": "array",
+            "description": "containers",
+            "items": {
+              "$ref": "#/components/schemas/containers"
+            }
+          },
+          "contract": {
+            "type": "object",
+            "description": "contract",
+            "$ref": "#/components/schemas/contracts"
+          },
+          "api": {
+            "type": "object",
+            "description": "api",
+            "$ref": "#/components/schemas/apis"
           }
         },
         "description": "Mining site of a farm"
       },
       "flows": {
-        "required": ["cash"],
+        "required": [
+          "cash"
+        ],
         "type": "object",
         "properties": {
           "cash": {
@@ -6465,6 +6983,33 @@
             "type": "string",
             "format": "timestamp with time zone",
             "default": "now()"
+          },
+          "location": {
+            "type": "object",
+            "description": "location",
+            "$ref": "#/components/schemas/locations"
+          },
+          "sites": {
+            "type": "array",
+            "description": "sites",
+            "items": {
+              "$ref": "#/components/schemas/sites"
+            }
+          },
+          "token": {
+            "type": "object",
+            "description": "token",
+            "$ref": "#/components/schemas/tokens"
+          },
+          "society": {
+            "type": "object",
+            "description": "society",
+            "$ref": "#/components/schemas/societies"
+          },
+          "vault": {
+            "type": "object",
+            "description": "vault",
+            "$ref": "#/components/schemas/vaults"
           }
         },
         "description": "mining farm"
@@ -6531,12 +7076,20 @@
             "type": "integer",
             "description": "Note:\nThis is a Foreign Key to `farms.id`.<fk table='farms' column='id'/>",
             "format": "bigint"
+          },
+          "farm": {
+            "type": "object",
+            "description": "farm",
+            "$ref": "#/components/schemas/farms"
           }
         },
         "description": "CSM token"
       },
       "pools": {
-        "required": ["id", "name"],
+        "required": [
+          "id",
+          "name"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -6552,7 +7105,13 @@
         "description": "mining pool"
       },
       "apis": {
-        "required": ["id", "poolId", "siteId", "url", "username"],
+        "required": [
+          "id",
+          "poolId",
+          "siteId",
+          "url",
+          "username"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -6577,12 +7136,24 @@
             "type": "integer",
             "description": "Note:\nThis is a Foreign Key to `sites.id`.<fk table='sites' column='id'/>",
             "format": "bigint"
+          },
+          "site": {
+            "type": "object",
+            "description": "site",
+            "$ref": "#/components/schemas/sites"
+          },
+          "pool": {
+            "type": "object",
+            "description": "pool",
+            "$ref": "#/components/schemas/pools"
           }
         },
         "description": "mining pool api"
       },
       "providers": {
-        "required": ["provider"],
+        "required": [
+          "provider"
+        ],
         "type": "object",
         "properties": {
           "provider": {
@@ -6592,22 +7163,6 @@
           }
         },
         "description": "service provider"
-      },
-      "where": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Note:\nThis is a Primary Key.<pk/>",
-            "format": "bigint"
-          },
-          "id_gt": {
-            "type": "integer",
-            "description": "Note:\nThis is a Foreign Key to `pools.id`.<fk table='pools' column='id'/>",
-            "format": "bigint"
-          }
-        },
-        "description": "where operator"
       }
     },
     "parameters": {
@@ -6617,7 +7172,9 @@
         "description": "Preference",
         "schema": {
           "type": "string",
-          "enum": ["params=single-object"]
+          "enum": [
+            "params=single-object"
+          ]
         }
       },
       "preferReturn": {
@@ -6626,7 +7183,11 @@
         "description": "Preference",
         "schema": {
           "type": "string",
-          "enum": ["return=representation", "return=minimal", "return=none"]
+          "enum": [
+            "return=representation",
+            "return=minimal",
+            "return=none"
+          ]
         }
       },
       "preferCount": {
@@ -6635,7 +7196,9 @@
         "description": "Preference",
         "schema": {
           "type": "string",
-          "enum": ["count=none"]
+          "enum": [
+            "count=none"
+          ]
         }
       },
       "preferPost": {
@@ -6892,6 +7455,13 @@
           "type": "string"
         }
       },
+      "rowFilter.societies.farmId": {
+        "name": "farmId",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
       "rowFilter.asics.id": {
         "name": "id",
         "in": "query",
@@ -6948,29 +7518,8 @@
           "type": "string"
         }
       },
-      "rowFilter.powerPlants.contractDuration": {
-        "name": "contractDuration",
-        "in": "query",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "rowFilter.powerPlants.electricityPrice": {
-        "name": "electricityPrice",
-        "in": "query",
-        "schema": {
-          "type": "string"
-        }
-      },
       "rowFilter.powerPlants.powerMW": {
         "name": "powerMW",
-        "in": "query",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "rowFilter.powerPlants.renewableContract": {
-        "name": "renewableContract",
         "in": "query",
         "schema": {
           "type": "string"
@@ -7083,6 +7632,27 @@
       },
       "rowFilter.contracts.operator": {
         "name": "operator",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.contracts.electricityPrice": {
+        "name": "electricityPrice",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.contracts.electricityContractDuration": {
+        "name": "electricityContractDuration",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.contracts.electricityContractRenewable": {
+        "name": "electricityContractRenewable",
         "in": "query",
         "schema": {
           "type": "string"
@@ -7347,7 +7917,21 @@
           "type": "string"
         }
       },
-      "rowFilter..cash": {
+      "rowFilter.sites.powerPlantId": {
+        "name": "powerPlantId",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.sites.operatorId": {
+        "name": "operatorId",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "rowFilter.flows.cash": {
         "name": "cash",
         "in": "query",
         "schema": {
@@ -7684,12 +8268,12 @@
         },
         "required": false
       },
-      "body.": {
-        "description": "",
+      "body.flows": {
+        "description": "flows",
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/"
+              "$ref": "#/components/schemas/flows"
             }
           }
         },
@@ -7751,5 +8335,6 @@
         "required": false
       }
     }
-  }
+  },
+  "x-original-swagger-version": "2.0"
 }
