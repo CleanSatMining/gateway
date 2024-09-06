@@ -43,6 +43,6 @@ npm install -g ts-node
 
 Run the update script:
 ```sh
-ts-node scripts\openapi.ts
+yarn prepare
 
 By following these steps, you will successfully update the OpenAPI file for the Supabase CSM database.
