@@ -11,28 +11,42 @@
       "text/csv"
     ],
     "schemas": {
+      "types": {
+        "site": "sites",
+        "farm": "farms",
+        "pool": "pools",
+        "location": "locations",
+        "society": "societies",
+        "powerPlant": "powerPlants",
+        "operator": "operators",
+        "container": "containers",
+        "contract": "contracts",
+        "api": "apis",
+        "token": "tokens",
+        "vault": "vaults"
+      },
       "explain": {
-        "siteId": { "name": "site", "type": "object", "reference": "sites" },
-        "asicId": { "name": "asic", "type": "object", "reference": "asics" },
-        "farmId": { "name": "farm", "type": "object", "reference": "farms" },
-        "poolId": { "name": "pool", "type": "object", "reference": "pools" },
+        "siteId": { "name": "sites", "type": "object", "reference": "sites" },
+        "asicId": { "name": "asics", "type": "object", "reference": "asics" },
+        "farmId": { "name": "farms", "type": "object", "reference": "farms" },
+        "poolId": { "name": "pools", "type": "object", "reference": "pools" },
         "locationId": {
-          "name": "location",
+          "name": "locations",
           "type": "object",
           "reference": "locations"
         },
         "societyId": {
-          "name": "society",
+          "name": "societies",
           "type": "object",
           "reference": "societies"
         },
         "powerPlantId": {
-          "name": "powerPlant",
+          "name": "powerPlants",
           "type": "object",
           "reference": "powerPlants"
         },
         "operatorId": {
-          "name": "operator",
+          "name": "operators",
           "type": "object",
           "reference": "operators"
         }
@@ -41,61 +55,47 @@
         "sites": [
           {
             "name": "containers",
-            "item": {
-              "type": "array",
-              "description": "containers",
-              "reference": "containers"
-            }
+            "type": "array",
+            "description": "containers",
+            "reference": "containers"
           },
           {
-            "name": "contract",
-            "item": {
-              "type": "object",
-              "description": "contract",
-              "reference": "contracts"
-            }
+            "name": "contracts",
+            "type": "object",
+            "description": "contract",
+            "reference": "contracts"
           },
           {
-            "name": "api",
-            "item": {
-              "type": "object",
-              "description": "api",
-              "reference": "apis"
-            }
+            "name": "apis",
+            "type": "object",
+            "description": "api",
+            "reference": "apis"
           }
         ],
         "farms": [
           {
             "name": "sites",
-            "item": {
-              "type": "array",
-              "description": "sites",
-              "reference": "sites"
-            }
+            "type": "array",
+            "description": "sites",
+            "reference": "sites"
           },
           {
-            "name": "token",
-            "item": {
-              "type": "object",
-              "description": "token",
-              "reference": "tokens"
-            }
+            "name": "tokens",
+            "type": "object",
+            "description": "token",
+            "reference": "tokens"
           },
           {
-            "name": "society",
-            "item": {
-              "type": "object",
-              "description": "society",
-              "reference": "societies"
-            }
+            "name": "societies",
+            "type": "object",
+            "description": "society",
+            "reference": "societies"
           },
           {
-            "name": "vault",
-            "item": {
-              "type": "object",
-              "description": "vault",
-              "reference": "vaults"
-            }
+            "name": "vaults",
+            "type": "object",
+            "description": "vault",
+            "reference": "vaults"
           }
         ]
       }

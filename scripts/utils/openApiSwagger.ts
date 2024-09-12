@@ -6,7 +6,6 @@ import * as dotenv from "dotenv";
 // Charger les variables d'environnement
 dotenv.config();
 
-const swaggerFilePath = path.join(__dirname, "../../openapi.json");
 const outputFilePath = path.join(__dirname, "../../openapi.json");
 
 async function fetchSwagger() {

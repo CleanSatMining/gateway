@@ -153,21 +153,13 @@ function setExplainField(
           `Ajout du champ ${explainField.name} au chemin ${currentPath}`
         );
 
-        if (explainField.type === "array") {
-          schema[explainField.name] = {
-            type: explainField.type,
-            description: explainField.name,
-            items: {
-              $ref: `#/components/schemas/${explainField.reference}`,
-            },
-          };
-        } else {
-          schema[explainField.name] = {
-            type: explainField.type,
-            description: explainField.name,
+        schema[explainField.name] = {
+          type: explainField.type,
+          description: explainField.name,
+          items: {
             $ref: `#/components/schemas/${explainField.reference}`,
-          };
-        }
+          },
+        };
       }
 
       if (typeof schema[key] === "object" && schema[key] !== null) {
@@ -199,22 +191,17 @@ function extendFieldNode(
 
         for (const child of childrenFields) {
           // Ajouter le champ "searchValue" au même niveau que "searchKey"
-          console.log(`Ajout du champ ${child.name} au chemin ${currentPath}`);
-          if (child.type === "array") {
-            currentSchema[child.name] = {
-              type: child.type,
-              description: child.name,
-              items: {
-                $ref: `#/components/schemas/${child.reference}`,
-              },
-            };
-          } else {
-            currentSchema[child.name] = {
-              type: child.type,
-              description: child.name,
+          console.log(
+            `Ajout du champ ${child.name} avec la ref ${child.reference} au chemin ${currentPath}`
+          );
+
+          currentSchema[child.name] = {
+            type: child.type,
+            description: child.name,
+            items: {
               $ref: `#/components/schemas/${child.reference}`,
-            };
-          }
+            },
+          };
         }
       }
 

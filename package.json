@@ -5,7 +5,7 @@
   "author": "Charly POLY",
   "license": "MIT",
   "scripts": {
-    "prepare": "ts-node ./scripts/openapi.ts",
+    "prepare": "tsx ./scripts/openapi.ts",
     "start": "mesh dev",
     "build": "echo \"noop\";"
   },
@@ -24,9 +24,10 @@
     "path": "^0.12.7",
     "swagger2openapi": "^7.0.8",
     "typescript": "^5.5.4",
-    "ts-node": "^10.9.2",
+    "tsx": "4.19.0",
     "@types/node": "^22.5.4",
     "@types/swagger2openapi": "7.0.4",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "axios": "^1.7.7"
   }
 }

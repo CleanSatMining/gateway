@@ -2787,6 +2787,9 @@
             "$ref": "#/components/parameters/rowFilter.apis.siteId"
           },
           {
+            "$ref": "#/components/parameters/rowFilter.apis.closed_at"
+          },
+          {
             "$ref": "#/components/parameters/select"
           },
           {
@@ -2871,6 +2874,9 @@
             "$ref": "#/components/parameters/rowFilter.apis.siteId"
           },
           {
+            "$ref": "#/components/parameters/rowFilter.apis.closed_at"
+          },
+          {
             "$ref": "#/components/parameters/preferReturn"
           }
         ],
@@ -2900,6 +2906,9 @@
           },
           {
             "$ref": "#/components/parameters/rowFilter.apis.siteId"
+          },
+          {
+            "$ref": "#/components/parameters/rowFilter.apis.closed_at"
           },
           {
             "$ref": "#/components/parameters/preferReturn"
@@ -4140,6 +4149,14 @@
           "type": "string"
         }
       },
+      "rowFilter.apis.closed_at": {
+        "name": "closed_at",
+        "required": false,
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
       "rowFilter.providers.provider": {
         "name": "provider",
         "required": false,
@@ -4360,10 +4377,12 @@
             "format": "bigint",
             "type": "integer"
           },
-          "farm": {
+          "farms": {
             "type": "object",
-            "description": "farm",
-            "$ref": "#/components/schemas/farms"
+            "description": "farms",
+            "items": {
+              "$ref": "#/components/schemas/farms"
+            }
           }
         },
         "type": "object"
@@ -4426,20 +4445,26 @@
             "format": "character varying",
             "type": "string"
           },
-          "site": {
+          "sites": {
             "type": "object",
-            "description": "site",
-            "$ref": "#/components/schemas/sites"
+            "description": "sites",
+            "items": {
+              "$ref": "#/components/schemas/sites"
+            }
           },
-          "asic": {
+          "asics": {
             "type": "object",
-            "description": "asic",
-            "$ref": "#/components/schemas/asics"
+            "description": "asics",
+            "items": {
+              "$ref": "#/components/schemas/asics"
+            }
           },
-          "location": {
+          "locations": {
             "type": "object",
-            "description": "location",
-            "$ref": "#/components/schemas/locations"
+            "description": "locations",
+            "items": {
+              "$ref": "#/components/schemas/locations"
+            }
           }
         },
         "type": "object"
@@ -4519,15 +4544,19 @@
             "format": "bigint",
             "type": "integer"
           },
-          "farm": {
+          "farms": {
             "type": "object",
-            "description": "farm",
-            "$ref": "#/components/schemas/farms"
+            "description": "farms",
+            "items": {
+              "$ref": "#/components/schemas/farms"
+            }
           },
-          "location": {
+          "locations": {
             "type": "object",
-            "description": "location",
-            "$ref": "#/components/schemas/locations"
+            "description": "locations",
+            "items": {
+              "$ref": "#/components/schemas/locations"
+            }
           }
         },
         "type": "object"
@@ -4613,10 +4642,12 @@
             "format": "character varying",
             "type": "string"
           },
-          "location": {
+          "locations": {
             "type": "object",
-            "description": "location",
-            "$ref": "#/components/schemas/locations"
+            "description": "locations",
+            "items": {
+              "$ref": "#/components/schemas/locations"
+            }
           }
         },
         "type": "object"
@@ -4712,10 +4743,12 @@
             "format": "boolean",
             "type": "boolean"
           },
-          "site": {
+          "sites": {
             "type": "object",
-            "description": "site",
-            "$ref": "#/components/schemas/sites"
+            "description": "sites",
+            "items": {
+              "$ref": "#/components/schemas/sites"
+            }
           }
         },
         "type": "object"
@@ -4862,15 +4895,19 @@
             "format": "character varying",
             "type": "string"
           },
-          "site": {
+          "sites": {
             "type": "object",
-            "description": "site",
-            "$ref": "#/components/schemas/sites"
+            "description": "sites",
+            "items": {
+              "$ref": "#/components/schemas/sites"
+            }
           },
-          "farm": {
+          "farms": {
             "type": "object",
-            "description": "farm",
-            "$ref": "#/components/schemas/farms"
+            "description": "farms",
+            "items": {
+              "$ref": "#/components/schemas/farms"
+            }
           }
         },
         "type": "object"
@@ -4924,15 +4961,19 @@
             "format": "numeric",
             "type": "number"
           },
-          "site": {
+          "sites": {
             "type": "object",
-            "description": "site",
-            "$ref": "#/components/schemas/sites"
+            "description": "sites",
+            "items": {
+              "$ref": "#/components/schemas/sites"
+            }
           },
-          "farm": {
+          "farms": {
             "type": "object",
-            "description": "farm",
-            "$ref": "#/components/schemas/farms"
+            "description": "farms",
+            "items": {
+              "$ref": "#/components/schemas/farms"
+            }
           }
         },
         "type": "object"
@@ -4999,32 +5040,47 @@
             "format": "bigint",
             "type": "integer"
           },
-          "farm": {
+          "farms": {
             "type": "object",
-            "description": "farm",
-            "$ref": "#/components/schemas/farms"
+            "description": "farms",
+            "items": {
+              "$ref": "#/components/schemas/farms"
+            }
           },
-          "powerPlant": {
+          "powerPlants": {
             "type": "object",
-            "description": "powerPlant",
-            "$ref": "#/components/schemas/powerPlants"
+            "description": "powerPlants",
+            "items": {
+              "$ref": "#/components/schemas/powerPlants"
+            }
           },
-          "operator": {
+          "operators": {
             "type": "object",
-            "description": "operator",
-            "$ref": "#/components/schemas/operators"
+            "description": "operators",
+            "items": {
+              "$ref": "#/components/schemas/operators"
+            }
           },
           "containers": {
+            "type": "array",
             "description": "containers",
-            "$ref": "#/components/schemas/undefined"
+            "items": {
+              "$ref": "#/components/schemas/containers"
+            }
           },
-          "contract": {
-            "description": "contract",
-            "$ref": "#/components/schemas/undefined"
+          "contracts": {
+            "type": "object",
+            "description": "contracts",
+            "items": {
+              "$ref": "#/components/schemas/contracts"
+            }
           },
-          "api": {
-            "description": "api",
-            "$ref": "#/components/schemas/undefined"
+          "apis": {
+            "type": "object",
+            "description": "apis",
+            "items": {
+              "$ref": "#/components/schemas/apis"
+            }
           }
         },
         "type": "object"
@@ -5098,26 +5154,40 @@
             "format": "timestamp with time zone",
             "type": "string"
           },
-          "location": {
+          "locations": {
             "type": "object",
-            "description": "location",
-            "$ref": "#/components/schemas/locations"
+            "description": "locations",
+            "items": {
+              "$ref": "#/components/schemas/locations"
+            }
           },
           "sites": {
+            "type": "array",
             "description": "sites",
-            "$ref": "#/components/schemas/undefined"
+            "items": {
+              "$ref": "#/components/schemas/sites"
+            }
           },
-          "token": {
-            "description": "token",
-            "$ref": "#/components/schemas/undefined"
+          "tokens": {
+            "type": "object",
+            "description": "tokens",
+            "items": {
+              "$ref": "#/components/schemas/tokens"
+            }
           },
-          "society": {
-            "description": "society",
-            "$ref": "#/components/schemas/undefined"
+          "societies": {
+            "type": "object",
+            "description": "societies",
+            "items": {
+              "$ref": "#/components/schemas/societies"
+            }
           },
-          "vault": {
-            "description": "vault",
-            "$ref": "#/components/schemas/undefined"
+          "vaults": {
+            "type": "object",
+            "description": "vaults",
+            "items": {
+              "$ref": "#/components/schemas/vaults"
+            }
           }
         },
         "type": "object"
@@ -5134,7 +5204,8 @@
           "name",
           "symbol",
           "supply",
-          "updated_at"
+          "updated_at",
+          "farmId"
         ],
         "properties": {
           "id": {
@@ -5185,10 +5256,12 @@
             "format": "bigint",
             "type": "integer"
           },
-          "farm": {
+          "farms": {
             "type": "object",
-            "description": "farm",
-            "$ref": "#/components/schemas/farms"
+            "description": "farms",
+            "items": {
+              "$ref": "#/components/schemas/farms"
+            }
           }
         },
         "type": "object"
@@ -5245,15 +5318,23 @@
             "format": "bigint",
             "type": "integer"
           },
-          "site": {
-            "type": "object",
-            "description": "site",
-            "$ref": "#/components/schemas/sites"
+          "closed_at": {
+            "format": "timestamp with time zone",
+            "type": "string"
           },
-          "pool": {
+          "sites": {
             "type": "object",
-            "description": "pool",
-            "$ref": "#/components/schemas/pools"
+            "description": "sites",
+            "items": {
+              "$ref": "#/components/schemas/sites"
+            }
+          },
+          "pools": {
+            "type": "object",
+            "description": "pools",
+            "items": {
+              "$ref": "#/components/schemas/pools"
+            }
           }
         },
         "type": "object"
