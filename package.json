@@ -12,7 +12,7 @@
   "dependencies": {
     "@graphql-mesh/cli": "^0.87.2",
     "@graphql-mesh/graphql": "^0.95.0",
-    "@graphql-mesh/grpc": "^0.95.0",
+    "@graphql-mesh/grpc": "^0.104.6",
     "@graphql-mesh/openapi": "^0.95.3",
     "@graphql-mesh/transform-filter-schema": "^0.102.5",
     "@graphql-mesh/transform-rename": "^0.102.5",
