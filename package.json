@@ -20,9 +20,7 @@
     "@graphql-mesh/transform-replace-field": "^0.102.5",
     "@graphql-mesh/transform-federation": "^0.102.5",
     "graphql": "^16.9.0",
-    "tslib": "^2.7.0"
-  },
-  "devDependencies": {
+    "tslib": "^2.7.0",
     "fs": "^0.0.1-security",
     "path": "^0.12.7",
     "swagger2openapi": "^7.0.8",
