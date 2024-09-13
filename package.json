@@ -4,14 +4,15 @@
   "main": "index.js",
   "author": "Charly POLY",
   "license": "MIT",
+  "type": "module",
   "scripts": {
-    "prepare": "tsx ./scripts/openapi.ts",
+    "openapi": "tsx ./scripts/openapi.ts",
     "start": "mesh dev",
     "build": "echo \"noop\";"
   },
   "dependencies": {
-    "@graphql-mesh/cli": "^0.87.2",
-    "@graphql-mesh/graphql": "^0.95.0",
+    "@graphql-mesh/cli": "^0.96.4",
+    "@graphql-mesh/graphql": "^0.102.6",
     "@graphql-mesh/grpc": "^0.104.6",
     "@graphql-mesh/openapi": "^0.95.3",
     "@graphql-mesh/transform-filter-schema": "^0.102.5",
@@ -19,7 +20,9 @@
     "@graphql-mesh/transform-replace-field": "^0.102.5",
     "@graphql-mesh/transform-federation": "^0.102.5",
     "graphql": "^16.9.0",
-    "tslib": "^2.7.0",
+    "tslib": "^2.7.0"
+  },
+  "devDependencies": {
     "fs": "^0.0.1-security",
     "path": "^0.12.7",
     "swagger2openapi": "^7.0.8",

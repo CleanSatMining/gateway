@@ -2,10 +2,13 @@ import { promises as fs } from "fs";
 import * as path from "path";
 import * as swagger2openapi from "swagger2openapi";
 import * as dotenv from "dotenv";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
 // Charger les variables d'environnement
 dotenv.config();
-
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const outputFilePath = path.join(__dirname, "../../openapi.json");
 
 async function fetchSwagger() {
