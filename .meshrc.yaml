@@ -1,0 +1,138 @@
+sources:
+  - name: CSM
+    handler:
+      openapi:
+        source: ./openapi.json
+        endpoint: https://zlczywhctfaosxqtjwee.supabase.co/rest/v1/
+        operationHeaders:
+          apikey: ${SUPABASE_CSM_API_KEY}
+transforms:
+  - rename:
+      mode: wrap
+      renames:
+        # rename field arguments
+        - from:
+            type: apis
+            field: sites
+          to:
+            type: apis
+            field: site
+        - from:
+            type: apis
+            field: pools
+          to:
+            type: apis
+            field: pool
+        - from:
+            type: containers
+            field: sites
+          to:
+            type: containers
+            field: site
+        - from:
+            type: containers
+            field: locations
+          to:
+            type: containers
+            field: location
+        - from:
+            type: contracts
+            field: sites
+          to:
+            type: contracts
+            field: site
+        - from:
+            type: sites
+            field: farms
+          to:
+            type: sites
+            field: farm
+        - from:
+            type: sites
+            field: contracts
+          to:
+            type: sites
+            field: contract
+        - from:
+            type: sites
+            field: apis
+          to:
+            type: sites
+            field: api
+        - from:
+            type: farms
+            field: tokens
+          to:
+            type: farms
+            field: token
+        - from:
+            type: farms
+            field: societies
+          to:
+            type: farms
+            field: society
+        - from:
+            type: farms
+            field: vaults
+          to:
+            type: farms
+            field: vault
+        - from:
+            type: financialStatements
+            field: farms
+          to:
+            type: financialStatements
+            field: farm
+        - from:
+            type: financialStatements
+            field: sites
+          to:
+            type: financialStatements
+            field: site
+        - from:
+            type: mining
+            field: farms
+          to:
+            type: mining
+            field: farm
+        - from:
+            type: mining
+            field: sites
+          to:
+            type: mining
+            field: site
+        - from:
+            type: powerPlants
+            field: locations
+          to:
+            type: powerPlants
+            field: location
+        - from:
+            type: societies
+            field: farms
+          to:
+            type: societies
+            field: farm
+        - from:
+            type: societies
+            field: locations
+          to:
+            type: societies
+            field: location
+        - from:
+            type: tokens
+            field: farms
+          to:
+            type: tokens
+            field: farm
+        - from:
+            type: vaults
+            field: farms
+          to:
+            type: vaults
+            field: farm
+additionalResolvers:
+  - "./resolvers"
+
+serve:
+  endpoint: /api/graphql # This is the actual endpoint to the API route

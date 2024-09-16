@@ -1,0 +1,104 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CSM API CONFIG",
+    "version": "1.0.0"
+  },
+  "nodes": {
+    "delete": [
+      "application/vnd.pgrst.object+json;nulls=stripped",
+      "application/vnd.pgrst.object+json",
+      "text/csv"
+    ],
+    "schemas": {
+      "types": {
+        "site": "sites",
+        "farm": "farms",
+        "pool": "pools",
+        "location": "locations",
+        "society": "societies",
+        "powerPlant": "powerPlants",
+        "operator": "operators",
+        "container": "containers",
+        "contract": "contracts",
+        "api": "apis",
+        "token": "tokens",
+        "vault": "vaults"
+      },
+      "explain": {
+        "siteId": { "name": "sites", "type": "object", "reference": "sites" },
+        "asicId": { "name": "asics", "type": "object", "reference": "asics" },
+        "farmId": { "name": "farms", "type": "object", "reference": "farms" },
+        "poolId": { "name": "pools", "type": "object", "reference": "pools" },
+        "locationId": {
+          "name": "locations",
+          "type": "object",
+          "reference": "locations"
+        },
+        "societyId": {
+          "name": "societies",
+          "type": "object",
+          "reference": "societies"
+        },
+        "powerPlantId": {
+          "name": "powerPlants",
+          "type": "object",
+          "reference": "powerPlants"
+        },
+        "operatorId": {
+          "name": "operators",
+          "type": "object",
+          "reference": "operators"
+        }
+      },
+      "extend": {
+        "sites": [
+          {
+            "name": "containers",
+            "type": "array",
+            "description": "containers",
+            "reference": "containers"
+          },
+          {
+            "name": "contracts",
+            "type": "object",
+            "description": "contract",
+            "reference": "contracts"
+          },
+          {
+            "name": "apis",
+            "type": "object",
+            "description": "api",
+            "reference": "apis"
+          }
+        ],
+        "farms": [
+          {
+            "name": "sites",
+            "type": "array",
+            "description": "sites",
+            "reference": "sites"
+          },
+          {
+            "name": "tokens",
+            "type": "object",
+            "description": "token",
+            "reference": "tokens"
+          },
+          {
+            "name": "societies",
+            "type": "object",
+            "description": "society",
+            "reference": "societies"
+          },
+          {
+            "name": "vaults",
+            "type": "object",
+            "description": "vault",
+            "reference": "vaults"
+          }
+        ]
+      }
+    }
+  }
+}

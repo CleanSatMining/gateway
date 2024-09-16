@@ -3,15 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "generate:mesh": "mesh build",
+    "openapi": "tsx ./scripts/openapi.ts",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@graphql-mesh/cli": "^0.92.10",
+    "@graphql-mesh/config": "^0.104.6",
+    "@graphql-mesh/graphql": "^0.102.6",
+    "@graphql-mesh/grpc": "^0.104.6",
+    "@graphql-mesh/http": "^0.103.6",
+    "@graphql-mesh/openapi": "^0.97.5",
+    "@graphql-mesh/runtime": "^0.103.6",
+    "@graphql-mesh/transform-federation": "^0.102.5",
+    "@graphql-mesh/transform-filter-schema": "^0.102.5",
+    "@graphql-mesh/transform-rename": "^0.102.5",
+    "@graphql-mesh/transform-replace-field": "^0.102.5",
+    "graphql": "^16.9.0",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.11"
+    "next": "14.2.11",
+    "tslib": "^2.7.0"
   },
   "devDependencies": {
     "typescript": "^5",
