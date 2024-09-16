@@ -5,8 +5,9 @@
   "author": "Cyrille d'Urbal",
   "license": "MIT",
   "scripts": {
+    "generate:mesh": "mesh build",
     "openapi": "tsx ./scripts/openapi.ts",
-    "build": "tsc",
+    "build": "yarn generate:mesh && tsc",
     "start": "node dist/src/index.js",
     "deploy": "yarn build && yarn start"
   },
