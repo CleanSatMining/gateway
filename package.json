@@ -1,7 +1,7 @@
 {
   "name": "cleansatmining-gateway",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/src/index.js",
   "author": "Cyrille d'Urbal",
   "license": "MIT",
   "scripts": {

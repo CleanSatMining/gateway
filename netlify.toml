@@ -1,0 +1,12 @@
+[build]
+  command = "yarn build"
+  publish = "public"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"
+  inputs = { command = "yarn start" }
