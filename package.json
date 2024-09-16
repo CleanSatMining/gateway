@@ -7,7 +7,7 @@
     "openapi": "tsx ./scripts/openapi.ts",
     "dev": "next dev",
     "build": "mesh build && next build",
-    "start": "next start",
+    "start": "mesh start",
     "lint": "next lint"
   },
   "dependencies": {
