@@ -7,9 +7,11 @@
   "scripts": {
     "generate:mesh": "mesh build",
     "openapi": "tsx ./scripts/openapi.ts",
-    "build": "yarn generate:mesh && tsc",
-    "start": "mesh dev",
-    "deploy": "yarn build && yarn start"
+    "dev": "next dev",
+    "prebuild": "mesh build",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@graphql-mesh/cli": "^0.92.10",
@@ -24,10 +26,14 @@
     "@graphql-mesh/transform-rename": "^0.102.5",
     "@graphql-mesh/transform-replace-field": "^0.102.5",
     "graphql": "^16.9.0",
+    "next": "14.2.11",
+    "react": "^18",
+    "react-dom": "^18",
     "tslib": "^2.7.0"
   },
   "devDependencies": {
     "@types/node": "^22.5.5",
+    "@types/react": "18.3.6",
     "@types/swagger2openapi": "7.0.4",
     "axios": "^1.7.7",
     "dotenv": "^16.4.5",
