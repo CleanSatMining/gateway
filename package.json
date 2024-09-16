@@ -1,20 +1,19 @@
 {
-  "name": "multiple-sources-prog-resolvers",
+  "name": "cleansatmining-gateway",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Charly POLY",
+  "author": "Cyrille d'Urbal",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "openapi": "tsx ./scripts/openapi.ts",
     "start": "mesh dev",
-    "build": "echo \"noop\";"
+    "build": "mesh build"
   },
   "dependencies": {
-    "@graphql-mesh/cli": "^0.96.4",
+    "@graphql-mesh/cli": "^0.92.10",
     "@graphql-mesh/graphql": "^0.102.6",
     "@graphql-mesh/grpc": "^0.104.6",
-    "@graphql-mesh/openapi": "^0.95.3",
+    "@graphql-mesh/openapi": "^0.97.5",
     "@graphql-mesh/transform-filter-schema": "^0.102.5",
     "@graphql-mesh/transform-rename": "^0.102.5",
     "@graphql-mesh/transform-replace-field": "^0.102.5",
@@ -28,7 +27,7 @@
     "swagger2openapi": "^7.0.8",
     "typescript": "^5.6.2",
     "tsx": "4.19.1",
-    "@types/node": "^22.5.4",
+    "@types/node": "^22.5.5",
     "@types/swagger2openapi": "7.0.4",
     "dotenv": "^16.4.5",
     "axios": "^1.7.7"
