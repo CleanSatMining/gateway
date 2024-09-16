@@ -8,7 +8,7 @@
     "generate:mesh": "mesh build",
     "openapi": "tsx ./scripts/openapi.ts",
     "build": "yarn generate:mesh && tsc",
-    "start": "node dist/src/index.js",
+    "start": "mesh dev",
     "deploy": "yarn build && yarn start"
   },
   "dependencies": {

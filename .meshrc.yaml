@@ -135,5 +135,4 @@ additionalResolvers:
   - "./resolvers"
 
 serve:
-  staticFiles: public
-  port: 3000
+  endpoint: /api/graphql # This is the actual endpoint to the API route
