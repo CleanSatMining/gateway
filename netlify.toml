@@ -1,12 +1,12 @@
 [build]
-  command = "yarn build"
+  command = "yarn deploy"
   publish = "public"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
 
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/.netlify/functions/server"
   status = 200
-
-[[plugins]]
-  package = "@netlify/plugin-functions-install-core"
-  inputs = { command = "yarn start" }

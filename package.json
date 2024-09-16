@@ -8,8 +8,10 @@
     "generate:mesh": "mesh build",
     "openapi": "tsx ./scripts/openapi.ts",
     "build": "yarn generate:mesh && tsc",
+    "build:functions": "netlify-lambda build netlify/functions",
+    "serve:functions": "netlify-lambda serve netlify/functions",
     "start": "node dist/src/index.js",
-    "deploy": "yarn build && yarn start"
+    "deploy": "yarn build && yarn build:functions"
   },
   "dependencies": {
     "@graphql-mesh/cli": "^0.92.10",
@@ -23,8 +25,13 @@
     "@graphql-mesh/transform-filter-schema": "^0.102.5",
     "@graphql-mesh/transform-rename": "^0.102.5",
     "@graphql-mesh/transform-replace-field": "^0.102.5",
+    "@opentelemetry/api": "^1.0.0",
     "graphql": "^16.9.0",
-    "tslib": "^2.7.0"
+    "next": "^14.2.11",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tslib": "^2.7.0",
+    "webpack": "^5.64.0"
   },
   "devDependencies": {
     "@types/node": "^22.5.5",
@@ -32,6 +39,7 @@
     "axios": "^1.7.7",
     "dotenv": "^16.4.5",
     "fs": "^0.0.1-security",
+    "netlify-lambda": "^2.0.16",
     "path": "^0.12.7",
     "swagger2openapi": "^7.0.8",
     "tsx": "4.19.1",
