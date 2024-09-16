@@ -6,8 +6,9 @@
   "license": "MIT",
   "scripts": {
     "openapi": "tsx ./scripts/openapi.ts",
-    "start": "mesh dev",
-    "build": "mesh build && cp -r .mesh public"
+    "build": "tsc",
+    "start": "node dist/src/index.js",
+    "deploy": "yarn build && yarn start"
   },
   "dependencies": {
     "@graphql-mesh/cli": "^0.92.10",

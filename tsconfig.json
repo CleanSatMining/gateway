@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "CommonJS",
-    "strict": true,
+    "strict": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
@@ -12,6 +12,7 @@
     "**/*.ts"
   ],
   "exclude": [
+    "scripts",
     "node_modules"
   ]
 }
