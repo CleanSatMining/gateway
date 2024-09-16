@@ -7,7 +7,7 @@
   "scripts": {
     "openapi": "tsx ./scripts/openapi.ts",
     "start": "mesh dev",
-    "build": "mesh build"
+    "build": "mesh build && cp -r .mesh public"
   },
   "dependencies": {
     "@graphql-mesh/cli": "^0.92.10",
