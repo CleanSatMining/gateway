@@ -133,3 +133,7 @@ transforms:
             field: farm
 additionalResolvers:
   - "./resolvers"
+
+serve:
+  staticFiles: public
+  port: 3000
