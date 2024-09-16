@@ -1,4 +1,4 @@
-export const enumToSet = (enumObj: any): Set<string> => {
+export const enumToSet = (enumObj: unknown): Set<string> => {
   return new Set(Object.values(enumObj));
 };
 
@@ -11,6 +11,7 @@ export enum DefaultQueryParameters {
   Select = "select",
 }
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 export const DefaultQueryParametersSet: Set<String> = new Set(
   Object.values(DefaultQueryParameters)
 );
