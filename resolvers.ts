@@ -5,7 +5,9 @@ import { CleanSatMiningDatabaseTables } from "./src/types/parameters";
 import { databaseTypes } from "./src/tools/config";
 
 const resolvers: Resolvers = {
-  Query: {},
+  Query: {
+    choco: createResolver("farms"),
+  },
 };
 
 // Create the resolvers of supabases equality for all tables
@@ -28,71 +30,7 @@ function createResolver(tableName: string) {
       if (!context.CSM.Query[tableName]) {
         console.error("Query " + tableName + " not found in context.CSM.Query");
       }
-      /* 
-      // Obtenir les champs demandés
-      let primarySelectionSet: SelectionSetNode | undefined =
-        info.fieldNodes[0].selectionSet;
-      let infoSelectionSet: SelectionSetNode | undefined =
-        info.fieldNodes[0].infoSelectionSet;
 
-      const operation: OperationDefinitionNode = info.operation;
-      let opeSelectionSet = operation.selectionSet;
-
-      if (primarySelectionSet) {
-        // Ajouter le champ farms au SelectionSet
-        //console.log("add farms");
-        //infoSelectionSet = addFieldToSelectionSet(infoSelectionSet, "farms");
-        //newInfo.fieldNodes[0].selectionSet = infoSelectionSet;
-
-        console.log("rename farm");
-        primarySelectionSet = renameFieldInSelectionSet(
-          primarySelectionSet,
-          "farm",
-          "farms"
-        );
-
-        console.log("end farms");
-      }
-      if (infoSelectionSet) {
-        infoSelectionSet = renameFieldInSelectionSet(
-          infoSelectionSet,
-          "farm",
-          "farms"
-        );
-      }
-
-      if (opeSelectionSet) {
-        opeSelectionSet = renameFieldInSelectionSet(
-          opeSelectionSet,
-          "farm",
-          "farms"
-        );
-      }
-
-      // Créer un nouvel objet info avec le SelectionSet mis à jour
-      const newInfo: GraphQLResolveInfo = {
-        ...info,
-        fieldNodes: [
-          {
-            ...info.fieldNodes[0],
-            selectionSet: primarySelectionSet,
-            infoSelectionSet: infoSelectionSet,
-          },
-        ],
-        operation: {
-          ...info.operation,
-          selectionSet: opeSelectionSet,
-        },
-      };
-   
-
-      console.log(
-        "Selection set:",
-        "fieldNodes " + JSON.stringify(newInfo.fieldNodes, null, 2),
-        "operation " + JSON.stringify(newInfo.operation, null, 2),
-        "parentType " + JSON.stringify(newInfo.parentType, null, 2)
-      );
- */
       const requestedFields = await getRequestedFields(
         info.fieldNodes[0].selectionSet
       );
@@ -112,17 +50,9 @@ function createResolver(tableName: string) {
 
       const response = context.CSM.Query[tableName]({
         root,
-        args: args,
+        args: { id: "eq.1" },
         context,
         info,
-      });
-
-      await response.then((data) => {
-        if (data.error) {
-          console.error("Error", data.error);
-        } else {
-          console.log("Data", JSON.stringify(data, null, 2));
-        }
       });
 
       return response;

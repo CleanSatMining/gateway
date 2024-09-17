@@ -134,8 +134,13 @@ transforms:
           to:
             type: vaults
             field: farm
-#additionalResolvers:
-#  - "./resolvers"
+
+additionalTypeDefs: |
+  extend type Query {
+    choco: [farms!]!
+  }
+additionalResolvers:
+  - "./resolvers"
 
 serve:
   endpoint: /api/graphql # This is the actual endpoint to the API route
