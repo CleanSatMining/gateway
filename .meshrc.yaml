@@ -6,6 +6,9 @@ sources:
         endpoint: https://zlczywhctfaosxqtjwee.supabase.co/rest/v1/
         operationHeaders:
           apikey: ${SUPABASE_CSM_API_KEY}
+          accept: application/json
+          range-unit: items
+          accept-encoding: gzip
 transforms:
   - rename:
       mode: wrap
@@ -131,8 +134,8 @@ transforms:
           to:
             type: vaults
             field: farm
-additionalResolvers:
-  - "./resolvers"
+#additionalResolvers:
+#  - "./resolvers"
 
 serve:
   endpoint: /api/graphql # This is the actual endpoint to the API route

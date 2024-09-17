@@ -39,12 +39,6 @@
             "$ref": "#/components/parameters/order"
           },
           {
-            "$ref": "#/components/parameters/range"
-          },
-          {
-            "$ref": "#/components/parameters/rangeUnit"
-          },
-          {
             "$ref": "#/components/parameters/offset"
           },
           {
@@ -183,12 +177,6 @@
           },
           {
             "$ref": "#/components/parameters/order"
-          },
-          {
-            "$ref": "#/components/parameters/range"
-          },
-          {
-            "$ref": "#/components/parameters/rangeUnit"
           },
           {
             "$ref": "#/components/parameters/offset"
@@ -376,12 +364,6 @@
             "$ref": "#/components/parameters/order"
           },
           {
-            "$ref": "#/components/parameters/range"
-          },
-          {
-            "$ref": "#/components/parameters/rangeUnit"
-          },
-          {
             "$ref": "#/components/parameters/offset"
           },
           {
@@ -564,12 +546,6 @@
             "$ref": "#/components/parameters/order"
           },
           {
-            "$ref": "#/components/parameters/range"
-          },
-          {
-            "$ref": "#/components/parameters/rangeUnit"
-          },
-          {
             "$ref": "#/components/parameters/offset"
           },
           {
@@ -708,12 +684,6 @@
           },
           {
             "$ref": "#/components/parameters/order"
-          },
-          {
-            "$ref": "#/components/parameters/range"
-          },
-          {
-            "$ref": "#/components/parameters/rangeUnit"
           },
           {
             "$ref": "#/components/parameters/offset"
@@ -884,12 +854,6 @@
           },
           {
             "$ref": "#/components/parameters/order"
-          },
-          {
-            "$ref": "#/components/parameters/range"
-          },
-          {
-            "$ref": "#/components/parameters/rangeUnit"
           },
           {
             "$ref": "#/components/parameters/offset"
@@ -1086,12 +1050,6 @@
             "$ref": "#/components/parameters/order"
           },
           {
-            "$ref": "#/components/parameters/range"
-          },
-          {
-            "$ref": "#/components/parameters/rangeUnit"
-          },
-          {
             "$ref": "#/components/parameters/offset"
           },
           {
@@ -1214,12 +1172,6 @@
             "$ref": "#/components/parameters/order"
           },
           {
-            "$ref": "#/components/parameters/range"
-          },
-          {
-            "$ref": "#/components/parameters/rangeUnit"
-          },
-          {
             "$ref": "#/components/parameters/offset"
           },
           {
@@ -1334,12 +1286,6 @@
           },
           {
             "$ref": "#/components/parameters/order"
-          },
-          {
-            "$ref": "#/components/parameters/range"
-          },
-          {
-            "$ref": "#/components/parameters/rangeUnit"
           },
           {
             "$ref": "#/components/parameters/offset"
@@ -1471,12 +1417,6 @@
           },
           {
             "$ref": "#/components/parameters/order"
-          },
-          {
-            "$ref": "#/components/parameters/range"
-          },
-          {
-            "$ref": "#/components/parameters/rangeUnit"
           },
           {
             "$ref": "#/components/parameters/offset"
@@ -1655,12 +1595,6 @@
             "$ref": "#/components/parameters/order"
           },
           {
-            "$ref": "#/components/parameters/range"
-          },
-          {
-            "$ref": "#/components/parameters/rangeUnit"
-          },
-          {
             "$ref": "#/components/parameters/offset"
           },
           {
@@ -1825,12 +1759,6 @@
             "$ref": "#/components/parameters/order"
           },
           {
-            "$ref": "#/components/parameters/range"
-          },
-          {
-            "$ref": "#/components/parameters/rangeUnit"
-          },
-          {
             "$ref": "#/components/parameters/offset"
           },
           {
@@ -1980,12 +1908,6 @@
             "$ref": "#/components/parameters/order"
           },
           {
-            "$ref": "#/components/parameters/range"
-          },
-          {
-            "$ref": "#/components/parameters/rangeUnit"
-          },
-          {
             "$ref": "#/components/parameters/offset"
           },
           {
@@ -2103,12 +2025,6 @@
           },
           {
             "$ref": "#/components/parameters/order"
-          },
-          {
-            "$ref": "#/components/parameters/range"
-          },
-          {
-            "$ref": "#/components/parameters/rangeUnit"
           },
           {
             "$ref": "#/components/parameters/offset"
@@ -2284,12 +2200,6 @@
             "$ref": "#/components/parameters/order"
           },
           {
-            "$ref": "#/components/parameters/range"
-          },
-          {
-            "$ref": "#/components/parameters/rangeUnit"
-          },
-          {
             "$ref": "#/components/parameters/offset"
           },
           {
@@ -2448,12 +2358,6 @@
             "$ref": "#/components/parameters/order"
           },
           {
-            "$ref": "#/components/parameters/range"
-          },
-          {
-            "$ref": "#/components/parameters/rangeUnit"
-          },
-          {
             "$ref": "#/components/parameters/offset"
           },
           {
@@ -2568,12 +2472,6 @@
           },
           {
             "$ref": "#/components/parameters/order"
-          },
-          {
-            "$ref": "#/components/parameters/range"
-          },
-          {
-            "$ref": "#/components/parameters/rangeUnit"
           },
           {
             "$ref": "#/components/parameters/offset"
@@ -2701,12 +2599,6 @@
             "$ref": "#/components/parameters/order"
           },
           {
-            "$ref": "#/components/parameters/range"
-          },
-          {
-            "$ref": "#/components/parameters/rangeUnit"
-          },
-          {
             "$ref": "#/components/parameters/offset"
           },
           {
@@ -2790,15 +2682,6 @@
       }
     }
   },
-  "externalDocs": {
-    "description": "PostgREST Documentation",
-    "url": "https://postgrest.org/en/v12/references/api.html"
-  },
-  "servers": [
-    {
-      "url": "https://zlczywhctfaosxqtjwee.supabase.co:443"
-    }
-  ],
   "components": {
     "parameters": {
       "preferParams": {
@@ -2844,25 +2727,6 @@
         "in": "query",
         "schema": {
           "type": "string"
-        }
-      },
-      "range": {
-        "name": "Range",
-        "description": "Limiting and Pagination",
-        "required": false,
-        "in": "header",
-        "schema": {
-          "type": "string"
-        }
-      },
-      "rangeUnit": {
-        "name": "Range-Unit",
-        "description": "Limiting and Pagination",
-        "required": false,
-        "in": "header",
-        "schema": {
-          "type": "string",
-          "default": "items"
         }
       },
       "offset": {
