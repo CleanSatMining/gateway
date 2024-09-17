@@ -14,7 +14,9 @@
           }
         },
         "summary": "OpenAPI description (this document)",
-        "tags": ["Introspection"]
+        "tags": [
+          "Introspection"
+        ]
       }
     },
     "/vaults": {
@@ -49,6 +51,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/preferCount"
           }
         ],
         "responses": {
@@ -70,12 +75,17 @@
           }
         },
         "summary": "CSM society bitcoin vault",
-        "tags": ["vaults"]
+        "tags": [
+          "vaults"
+        ]
       },
       "post": {
         "parameters": [
           {
             "$ref": "#/components/parameters/select"
+          },
+          {
+            "$ref": "#/components/parameters/preferPost"
           }
         ],
         "requestBody": {
@@ -87,7 +97,9 @@
           }
         },
         "summary": "CSM society bitcoin vault",
-        "tags": ["vaults"]
+        "tags": [
+          "vaults"
+        ]
       },
       "delete": {
         "parameters": [
@@ -113,7 +125,9 @@
           }
         },
         "summary": "CSM society bitcoin vault",
-        "tags": ["vaults"]
+        "tags": [
+          "vaults"
+        ]
       },
       "patch": {
         "parameters": [
@@ -142,7 +156,9 @@
           }
         },
         "summary": "CSM society bitcoin vault",
-        "tags": ["vaults"]
+        "tags": [
+          "vaults"
+        ]
       }
     },
     "/containers": {
@@ -195,6 +211,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/preferCount"
           }
         ],
         "responses": {
@@ -216,12 +235,17 @@
           }
         },
         "summary": "asics container",
-        "tags": ["containers"]
+        "tags": [
+          "containers"
+        ]
       },
       "post": {
         "parameters": [
           {
             "$ref": "#/components/parameters/select"
+          },
+          {
+            "$ref": "#/components/parameters/preferPost"
           }
         ],
         "requestBody": {
@@ -233,7 +257,9 @@
           }
         },
         "summary": "asics container",
-        "tags": ["containers"]
+        "tags": [
+          "containers"
+        ]
       },
       "delete": {
         "parameters": [
@@ -277,7 +303,9 @@
           }
         },
         "summary": "asics container",
-        "tags": ["containers"]
+        "tags": [
+          "containers"
+        ]
       },
       "patch": {
         "parameters": [
@@ -324,7 +352,9 @@
           }
         },
         "summary": "asics container",
-        "tags": ["containers"]
+        "tags": [
+          "containers"
+        ]
       }
     },
     "/societies": {
@@ -386,6 +416,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/preferCount"
           }
         ],
         "responses": {
@@ -407,12 +440,17 @@
           }
         },
         "summary": "CSM mining society",
-        "tags": ["societies"]
+        "tags": [
+          "societies"
+        ]
       },
       "post": {
         "parameters": [
           {
             "$ref": "#/components/parameters/select"
+          },
+          {
+            "$ref": "#/components/parameters/preferPost"
           }
         ],
         "requestBody": {
@@ -424,7 +462,9 @@
           }
         },
         "summary": "CSM mining society",
-        "tags": ["societies"]
+        "tags": [
+          "societies"
+        ]
       },
       "delete": {
         "parameters": [
@@ -477,7 +517,9 @@
           }
         },
         "summary": "CSM mining society",
-        "tags": ["societies"]
+        "tags": [
+          "societies"
+        ]
       },
       "patch": {
         "parameters": [
@@ -533,7 +575,9 @@
           }
         },
         "summary": "CSM mining society",
-        "tags": ["societies"]
+        "tags": [
+          "societies"
+        ]
       }
     },
     "/asics": {
@@ -574,6 +618,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/preferCount"
           }
         ],
         "responses": {
@@ -595,12 +642,17 @@
           }
         },
         "summary": "mining asic",
-        "tags": ["asics"]
+        "tags": [
+          "asics"
+        ]
       },
       "post": {
         "parameters": [
           {
             "$ref": "#/components/parameters/select"
+          },
+          {
+            "$ref": "#/components/parameters/preferPost"
           }
         ],
         "requestBody": {
@@ -612,7 +664,9 @@
           }
         },
         "summary": "mining asic",
-        "tags": ["asics"]
+        "tags": [
+          "asics"
+        ]
       },
       "delete": {
         "parameters": [
@@ -644,7 +698,9 @@
           }
         },
         "summary": "mining asic",
-        "tags": ["asics"]
+        "tags": [
+          "asics"
+        ]
       },
       "patch": {
         "parameters": [
@@ -679,7 +735,9 @@
           }
         },
         "summary": "mining asic",
-        "tags": ["asics"]
+        "tags": [
+          "asics"
+        ]
       }
     },
     "/powerPlants": {
@@ -720,6 +778,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/preferCount"
           }
         ],
         "responses": {
@@ -741,12 +802,17 @@
           }
         },
         "summary": "power plant electricity supplier",
-        "tags": ["powerPlants"]
+        "tags": [
+          "powerPlants"
+        ]
       },
       "post": {
         "parameters": [
           {
             "$ref": "#/components/parameters/select"
+          },
+          {
+            "$ref": "#/components/parameters/preferPost"
           }
         ],
         "requestBody": {
@@ -758,7 +824,9 @@
           }
         },
         "summary": "power plant electricity supplier",
-        "tags": ["powerPlants"]
+        "tags": [
+          "powerPlants"
+        ]
       },
       "delete": {
         "parameters": [
@@ -790,7 +858,9 @@
           }
         },
         "summary": "power plant electricity supplier",
-        "tags": ["powerPlants"]
+        "tags": [
+          "powerPlants"
+        ]
       },
       "patch": {
         "parameters": [
@@ -825,7 +895,9 @@
           }
         },
         "summary": "power plant electricity supplier",
-        "tags": ["powerPlants"]
+        "tags": [
+          "powerPlants"
+        ]
       }
     },
     "/contracts": {
@@ -896,6 +968,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/preferCount"
           }
         ],
         "responses": {
@@ -917,12 +992,17 @@
           }
         },
         "summary": "contracts of mining services",
-        "tags": ["contracts"]
+        "tags": [
+          "contracts"
+        ]
       },
       "post": {
         "parameters": [
           {
             "$ref": "#/components/parameters/select"
+          },
+          {
+            "$ref": "#/components/parameters/preferPost"
           }
         ],
         "requestBody": {
@@ -934,7 +1014,9 @@
           }
         },
         "summary": "contracts of mining services",
-        "tags": ["contracts"]
+        "tags": [
+          "contracts"
+        ]
       },
       "delete": {
         "parameters": [
@@ -996,7 +1078,9 @@
           }
         },
         "summary": "contracts of mining services",
-        "tags": ["contracts"]
+        "tags": [
+          "contracts"
+        ]
       },
       "patch": {
         "parameters": [
@@ -1061,7 +1145,9 @@
           }
         },
         "summary": "contracts of mining services",
-        "tags": ["contracts"]
+        "tags": [
+          "contracts"
+        ]
       }
     },
     "/locations": {
@@ -1096,6 +1182,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/preferCount"
           }
         ],
         "responses": {
@@ -1117,12 +1206,17 @@
           }
         },
         "summary": "location of csm place",
-        "tags": ["locations"]
+        "tags": [
+          "locations"
+        ]
       },
       "post": {
         "parameters": [
           {
             "$ref": "#/components/parameters/select"
+          },
+          {
+            "$ref": "#/components/parameters/preferPost"
           }
         ],
         "requestBody": {
@@ -1134,7 +1228,9 @@
           }
         },
         "summary": "location of csm place",
-        "tags": ["locations"]
+        "tags": [
+          "locations"
+        ]
       },
       "delete": {
         "parameters": [
@@ -1160,7 +1256,9 @@
           }
         },
         "summary": "location of csm place",
-        "tags": ["locations"]
+        "tags": [
+          "locations"
+        ]
       },
       "patch": {
         "parameters": [
@@ -1189,7 +1287,9 @@
           }
         },
         "summary": "location of csm place",
-        "tags": ["locations"]
+        "tags": [
+          "locations"
+        ]
       }
     },
     "/operators": {
@@ -1224,6 +1324,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/preferCount"
           }
         ],
         "responses": {
@@ -1245,12 +1348,17 @@
           }
         },
         "summary": "mining operator",
-        "tags": ["operators"]
+        "tags": [
+          "operators"
+        ]
       },
       "post": {
         "parameters": [
           {
             "$ref": "#/components/parameters/select"
+          },
+          {
+            "$ref": "#/components/parameters/preferPost"
           }
         ],
         "requestBody": {
@@ -1262,7 +1370,9 @@
           }
         },
         "summary": "mining operator",
-        "tags": ["operators"]
+        "tags": [
+          "operators"
+        ]
       },
       "delete": {
         "parameters": [
@@ -1288,7 +1398,9 @@
           }
         },
         "summary": "mining operator",
-        "tags": ["operators"]
+        "tags": [
+          "operators"
+        ]
       },
       "patch": {
         "parameters": [
@@ -1317,7 +1429,9 @@
           }
         },
         "summary": "mining operator",
-        "tags": ["operators"]
+        "tags": [
+          "operators"
+        ]
       }
     },
     "/energies": {
@@ -1346,6 +1460,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/preferCount"
           }
         ],
         "responses": {
@@ -1367,12 +1484,17 @@
           }
         },
         "summary": "sources of energy",
-        "tags": ["energies"]
+        "tags": [
+          "energies"
+        ]
       },
       "post": {
         "parameters": [
           {
             "$ref": "#/components/parameters/select"
+          },
+          {
+            "$ref": "#/components/parameters/preferPost"
           }
         ],
         "requestBody": {
@@ -1384,7 +1506,9 @@
           }
         },
         "summary": "sources of energy",
-        "tags": ["energies"]
+        "tags": [
+          "energies"
+        ]
       },
       "delete": {
         "parameters": [
@@ -1404,7 +1528,9 @@
           }
         },
         "summary": "sources of energy",
-        "tags": ["energies"]
+        "tags": [
+          "energies"
+        ]
       },
       "patch": {
         "parameters": [
@@ -1427,7 +1553,9 @@
           }
         },
         "summary": "sources of energy",
-        "tags": ["energies"]
+        "tags": [
+          "energies"
+        ]
       }
     },
     "/financialStatements": {
@@ -1483,6 +1611,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/preferCount"
           }
         ],
         "responses": {
@@ -1504,12 +1635,17 @@
           }
         },
         "summary": "financial statement",
-        "tags": ["financialStatements"]
+        "tags": [
+          "financialStatements"
+        ]
       },
       "post": {
         "parameters": [
           {
             "$ref": "#/components/parameters/select"
+          },
+          {
+            "$ref": "#/components/parameters/preferPost"
           }
         ],
         "requestBody": {
@@ -1521,7 +1657,9 @@
           }
         },
         "summary": "financial statement",
-        "tags": ["financialStatements"]
+        "tags": [
+          "financialStatements"
+        ]
       },
       "delete": {
         "parameters": [
@@ -1568,7 +1706,9 @@
           }
         },
         "summary": "financial statement",
-        "tags": ["financialStatements"]
+        "tags": [
+          "financialStatements"
+        ]
       },
       "patch": {
         "parameters": [
@@ -1618,7 +1758,9 @@
           }
         },
         "summary": "financial statement",
-        "tags": ["financialStatements"]
+        "tags": [
+          "financialStatements"
+        ]
       }
     },
     "/mining": {
@@ -1665,6 +1807,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/preferCount"
           }
         ],
         "responses": {
@@ -1686,12 +1831,17 @@
           }
         },
         "summary": "mining data",
-        "tags": ["mining"]
+        "tags": [
+          "mining"
+        ]
       },
       "post": {
         "parameters": [
           {
             "$ref": "#/components/parameters/select"
+          },
+          {
+            "$ref": "#/components/parameters/preferPost"
           }
         ],
         "requestBody": {
@@ -1703,7 +1853,9 @@
           }
         },
         "summary": "mining data",
-        "tags": ["mining"]
+        "tags": [
+          "mining"
+        ]
       },
       "delete": {
         "parameters": [
@@ -1741,7 +1893,9 @@
           }
         },
         "summary": "mining data",
-        "tags": ["mining"]
+        "tags": [
+          "mining"
+        ]
       },
       "patch": {
         "parameters": [
@@ -1782,7 +1936,9 @@
           }
         },
         "summary": "mining data",
-        "tags": ["mining"]
+        "tags": [
+          "mining"
+        ]
       }
     },
     "/sites": {
@@ -1835,6 +1991,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/preferCount"
           }
         ],
         "responses": {
@@ -1856,12 +2015,17 @@
           }
         },
         "summary": "Mining site of a farm",
-        "tags": ["sites"]
+        "tags": [
+          "sites"
+        ]
       },
       "post": {
         "parameters": [
           {
             "$ref": "#/components/parameters/select"
+          },
+          {
+            "$ref": "#/components/parameters/preferPost"
           }
         ],
         "requestBody": {
@@ -1873,7 +2037,9 @@
           }
         },
         "summary": "Mining site of a farm",
-        "tags": ["sites"]
+        "tags": [
+          "sites"
+        ]
       },
       "delete": {
         "parameters": [
@@ -1917,7 +2083,9 @@
           }
         },
         "summary": "Mining site of a farm",
-        "tags": ["sites"]
+        "tags": [
+          "sites"
+        ]
       },
       "patch": {
         "parameters": [
@@ -1964,7 +2132,9 @@
           }
         },
         "summary": "Mining site of a farm",
-        "tags": ["sites"]
+        "tags": [
+          "sites"
+        ]
       }
     },
     "/flows": {
@@ -1990,6 +2160,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/preferCount"
           }
         ],
         "responses": {
@@ -2011,12 +2184,17 @@
           }
         },
         "summary": "cash flow oidtion",
-        "tags": ["flows"]
+        "tags": [
+          "flows"
+        ]
       },
       "post": {
         "parameters": [
           {
             "$ref": "#/components/parameters/select"
+          },
+          {
+            "$ref": "#/components/parameters/preferPost"
           }
         ],
         "requestBody": {
@@ -2028,7 +2206,9 @@
           }
         },
         "summary": "cash flow oidtion",
-        "tags": ["flows"]
+        "tags": [
+          "flows"
+        ]
       },
       "delete": {
         "parameters": [
@@ -2045,7 +2225,9 @@
           }
         },
         "summary": "cash flow oidtion",
-        "tags": ["flows"]
+        "tags": [
+          "flows"
+        ]
       },
       "patch": {
         "parameters": [
@@ -2065,7 +2247,9 @@
           }
         },
         "summary": "cash flow oidtion",
-        "tags": ["flows"]
+        "tags": [
+          "flows"
+        ]
       }
     },
     "/farms": {
@@ -2115,6 +2299,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/preferCount"
           }
         ],
         "responses": {
@@ -2136,12 +2323,17 @@
           }
         },
         "summary": "mining farm",
-        "tags": ["farms"]
+        "tags": [
+          "farms"
+        ]
       },
       "post": {
         "parameters": [
           {
             "$ref": "#/components/parameters/select"
+          },
+          {
+            "$ref": "#/components/parameters/preferPost"
           }
         ],
         "requestBody": {
@@ -2153,7 +2345,9 @@
           }
         },
         "summary": "mining farm",
-        "tags": ["farms"]
+        "tags": [
+          "farms"
+        ]
       },
       "delete": {
         "parameters": [
@@ -2194,7 +2388,9 @@
           }
         },
         "summary": "mining farm",
-        "tags": ["farms"]
+        "tags": [
+          "farms"
+        ]
       },
       "patch": {
         "parameters": [
@@ -2238,7 +2434,9 @@
           }
         },
         "summary": "mining farm",
-        "tags": ["farms"]
+        "tags": [
+          "farms"
+        ]
       }
     },
     "/tokens": {
@@ -2294,6 +2492,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/preferCount"
           }
         ],
         "responses": {
@@ -2315,12 +2516,17 @@
           }
         },
         "summary": "CSM token",
-        "tags": ["tokens"]
+        "tags": [
+          "tokens"
+        ]
       },
       "post": {
         "parameters": [
           {
             "$ref": "#/components/parameters/select"
+          },
+          {
+            "$ref": "#/components/parameters/preferPost"
           }
         ],
         "requestBody": {
@@ -2332,7 +2538,9 @@
           }
         },
         "summary": "CSM token",
-        "tags": ["tokens"]
+        "tags": [
+          "tokens"
+        ]
       },
       "delete": {
         "parameters": [
@@ -2379,7 +2587,9 @@
           }
         },
         "summary": "CSM token",
-        "tags": ["tokens"]
+        "tags": [
+          "tokens"
+        ]
       },
       "patch": {
         "parameters": [
@@ -2429,7 +2639,9 @@
           }
         },
         "summary": "CSM token",
-        "tags": ["tokens"]
+        "tags": [
+          "tokens"
+        ]
       }
     },
     "/pools": {
@@ -2458,6 +2670,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/preferCount"
           }
         ],
         "responses": {
@@ -2479,12 +2694,17 @@
           }
         },
         "summary": "mining pool",
-        "tags": ["pools"]
+        "tags": [
+          "pools"
+        ]
       },
       "post": {
         "parameters": [
           {
             "$ref": "#/components/parameters/select"
+          },
+          {
+            "$ref": "#/components/parameters/preferPost"
           }
         ],
         "requestBody": {
@@ -2496,7 +2716,9 @@
           }
         },
         "summary": "mining pool",
-        "tags": ["pools"]
+        "tags": [
+          "pools"
+        ]
       },
       "delete": {
         "parameters": [
@@ -2516,7 +2738,9 @@
           }
         },
         "summary": "mining pool",
-        "tags": ["pools"]
+        "tags": [
+          "pools"
+        ]
       },
       "patch": {
         "parameters": [
@@ -2539,7 +2763,9 @@
           }
         },
         "summary": "mining pool",
-        "tags": ["pools"]
+        "tags": [
+          "pools"
+        ]
       }
     },
     "/apis": {
@@ -2580,6 +2806,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/preferCount"
           }
         ],
         "responses": {
@@ -2601,12 +2830,17 @@
           }
         },
         "summary": "mining pool api",
-        "tags": ["apis"]
+        "tags": [
+          "apis"
+        ]
       },
       "post": {
         "parameters": [
           {
             "$ref": "#/components/parameters/select"
+          },
+          {
+            "$ref": "#/components/parameters/preferPost"
           }
         ],
         "requestBody": {
@@ -2618,7 +2852,9 @@
           }
         },
         "summary": "mining pool api",
-        "tags": ["apis"]
+        "tags": [
+          "apis"
+        ]
       },
       "delete": {
         "parameters": [
@@ -2650,7 +2886,9 @@
           }
         },
         "summary": "mining pool api",
-        "tags": ["apis"]
+        "tags": [
+          "apis"
+        ]
       },
       "patch": {
         "parameters": [
@@ -2685,7 +2923,9 @@
           }
         },
         "summary": "mining pool api",
-        "tags": ["apis"]
+        "tags": [
+          "apis"
+        ]
       }
     },
     "/providers": {
@@ -2711,6 +2951,9 @@
           },
           {
             "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/preferCount"
           }
         ],
         "responses": {
@@ -2732,12 +2975,17 @@
           }
         },
         "summary": "service provider",
-        "tags": ["providers"]
+        "tags": [
+          "providers"
+        ]
       },
       "post": {
         "parameters": [
           {
             "$ref": "#/components/parameters/select"
+          },
+          {
+            "$ref": "#/components/parameters/preferPost"
           }
         ],
         "requestBody": {
@@ -2749,7 +2997,9 @@
           }
         },
         "summary": "service provider",
-        "tags": ["providers"]
+        "tags": [
+          "providers"
+        ]
       },
       "delete": {
         "parameters": [
@@ -2766,7 +3016,9 @@
           }
         },
         "summary": "service provider",
-        "tags": ["providers"]
+        "tags": [
+          "providers"
+        ]
       },
       "patch": {
         "parameters": [
@@ -2786,7 +3038,9 @@
           }
         },
         "summary": "service provider",
-        "tags": ["providers"]
+        "tags": [
+          "providers"
+        ]
       }
     }
   },
@@ -2807,7 +3061,10 @@
         "required": false,
         "in": "header",
         "schema": {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "params=single-object"
+          ]
         }
       },
       "preferReturn": {
@@ -2816,7 +3073,40 @@
         "required": false,
         "in": "header",
         "schema": {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "return=representation",
+            "return=minimal",
+            "return=none"
+          ]
+        }
+      },
+      "preferCount": {
+        "name": "Prefer",
+        "description": "Preference",
+        "required": false,
+        "in": "header",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "count=none"
+          ]
+        }
+      },
+      "preferPost": {
+        "name": "Prefer",
+        "description": "Preference",
+        "required": false,
+        "in": "header",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "return=representation",
+            "return=minimal",
+            "return=none",
+            "resolution=ignore-duplicates",
+            "resolution=merge-duplicates"
+          ]
         }
       },
       "select": {
@@ -4061,7 +4351,12 @@
     "schemas": {
       "vaults": {
         "description": "CSM society bitcoin vault",
-        "required": ["id", "created_at", "xpub", "farmId"],
+        "required": [
+          "id",
+          "created_at",
+          "xpub",
+          "farmId"
+        ],
         "properties": {
           "id": {
             "description": "Note:\nThis is a Primary Key.<pk/>",
@@ -4460,7 +4755,12 @@
       },
       "locations": {
         "description": "location of csm place",
-        "required": ["id", "aera", "country", "countryCode"],
+        "required": [
+          "id",
+          "aera",
+          "country",
+          "countryCode"
+        ],
         "properties": {
           "id": {
             "description": "Note:\nThis is a Primary Key.<pk/>",
@@ -4484,7 +4784,12 @@
       },
       "operators": {
         "description": "mining operator",
-        "required": ["id", "logo", "name", "website"],
+        "required": [
+          "id",
+          "logo",
+          "name",
+          "website"
+        ],
         "properties": {
           "id": {
             "description": "Note:\nThis is a Primary Key.<pk/>",
@@ -4508,7 +4813,10 @@
       },
       "energies": {
         "description": "sources of energy",
-        "required": ["id", "type"],
+        "required": [
+          "id",
+          "type"
+        ],
         "properties": {
           "id": {
             "description": "Note:\nThis is a Primary Key.<pk/>",
@@ -4779,7 +5087,9 @@
       },
       "flows": {
         "description": "cash flow oidtion",
-        "required": ["cash"],
+        "required": [
+          "cash"
+        ],
         "properties": {
           "cash": {
             "description": "Note:\nThis is a Primary Key.<pk/>",
@@ -4958,7 +5268,10 @@
       },
       "pools": {
         "description": "mining pool",
-        "required": ["id", "name"],
+        "required": [
+          "id",
+          "name"
+        ],
         "properties": {
           "id": {
             "description": "Note:\nThis is a Primary Key.<pk/>",
@@ -4974,7 +5287,13 @@
       },
       "apis": {
         "description": "mining pool api",
-        "required": ["id", "poolId", "username", "url", "siteId"],
+        "required": [
+          "id",
+          "poolId",
+          "username",
+          "url",
+          "siteId"
+        ],
         "properties": {
           "id": {
             "description": "Note:\nThis is a Primary Key.<pk/>",
@@ -5022,7 +5341,9 @@
       },
       "providers": {
         "description": "service provider",
-        "required": ["provider"],
+        "required": [
+          "provider"
+        ],
         "properties": {
           "provider": {
             "description": "Note:\nThis is a Primary Key.<pk/>",
