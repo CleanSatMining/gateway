@@ -1,7 +1,3 @@
-export const enumToSet = (enumObj: unknown): Set<string> => {
-  return new Set(Object.values(enumObj));
-};
-
 export enum DefaultQueryParameters {
   Offset = "offset",
   Order = "order",
